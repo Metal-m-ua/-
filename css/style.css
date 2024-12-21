@@ -177,11 +177,13 @@ ul{
 
 .info__text{
     padding-top: 220px;
-    
+    position: relative;
+    left: 550px; /* Зсув вправо */
     padding-bottom: 30px;
 }
 .btn_kategory{
-    
+    position: relative;
+    left: 550px;
     border: 2px solid #FF7F50;
     padding: 4px 40px;
     border-radius: 55px;
@@ -278,12 +280,6 @@ ul{
         margin: 0 auto;
         padding: 0 20px;
         box-shadow: 0 10px 100px rgba(0, 0, 0, 0.5);
-    }
-
-    .info__list-box{
-        display: flex;
-        gap: 0 100px;
-
     }
  
 }

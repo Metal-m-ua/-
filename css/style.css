@@ -170,20 +170,18 @@ ul{
 .info__text-box{
     font-size: 24px;
     color: #F5F5DC;
-    width: 810px;
+    max-width: 810px;
     text-align: center;
     height: 100vh;
 }
 
 .info__text{
     padding-top: 220px;
-    position: relative;
-    left: 550px; /* Зсув вправо */
+    
     padding-bottom: 30px;
 }
 .btn_kategory{
-    position: relative;
-    left: 550px;
+    
     border: 2px solid #FF7F50;
     padding: 4px 40px;
     border-radius: 55px;
@@ -221,7 +219,7 @@ ul{
     justify-content: space-between;
     padding-bottom: 10px;
     padding-top: 51px;
-    width: 1300px;
+    max-width: 1300px;
     margin: 0 50px;
 
 }
@@ -230,7 +228,7 @@ ul{
     justify-content: center;
     height: 1px; /* Висота лінії */
     background-color: #FFAB89; /* Помаранчевий колір */
-    width: 1300px; /* Ширина на весь блок */
+    max-width: 1300px; /* Ширина на весь блок */
     margin: 20px 50px; /* Відступи зверху і знизу */
   }
 
@@ -280,6 +278,12 @@ ul{
         margin: 0 auto;
         padding: 0 20px;
         box-shadow: 0 10px 100px rgba(0, 0, 0, 0.5);
+    }
+
+    .info__list-box{
+        display: flex;
+        gap: 0 100px;
+
     }
  
 }

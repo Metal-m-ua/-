@@ -377,11 +377,7 @@ ul{
     .header-content__text1{
         font-size: 24px;
     }
-    .logo{
-        padding-top: 29px;
-        padding-left: 0px;
-        padding-right: 10px;
-    }
+    
 
     .menu__list{
         display: flex;

@@ -244,3 +244,30 @@ ul{
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+
+
+
+@media (max-width: 1200px){
+.gallery{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 410px;
+}
+.foto__sadovi{
+    width: 200px;
+    height: 200px;
+ 
+}
+.menu__list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+
+}
+

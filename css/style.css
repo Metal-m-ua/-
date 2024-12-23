@@ -333,10 +333,11 @@ ul{
 
 @media (max-width: 1200px){
     .header__titel{
-        color: #263238;
+        font-size: 70px;
     }
     .info__list-box{
-        gap: 0 50px;
+        gap: 0 10px;
+        padding: 0;
     }
     .container{
     
@@ -368,6 +369,24 @@ ul{
 
     .info__inner{
         justify-content: center;
+    }
+
+    .header-content__text{
+        font-size: 48px;
+    }
+    .header-content__text1{
+        font-size: 24px;
+    }
+    .logo{
+        padding-top: 29px;
+        padding-left: 0px;
+        padding-right: 10px;
+    }
+
+    .menu__list{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
  
 }

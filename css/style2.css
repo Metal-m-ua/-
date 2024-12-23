@@ -265,6 +265,9 @@ ul{
     flex-direction: column;
     gap: 10px;
 }
+.footer__text{
+    font-size: 10px;
+}
 
 
 

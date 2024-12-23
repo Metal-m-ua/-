@@ -248,7 +248,7 @@ ul{
 
 
 
-@media (max-width: 400px){
+@media (max-width: 480px){
 .gallery{
     display: grid;
     gap: 10px;

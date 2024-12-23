@@ -66,14 +66,6 @@ ul{
 }
 
 
-/* Текст із постійним підкресленням */
-.underline-hover {
-    position: relative;
-    display: inline-block;
-    font-size: 24px;
-    color: #34495e;
-    text-decoration: none; /* Відключаємо стандартне підкреслення */
-}
 
 .menu__link::after {
     content: '';

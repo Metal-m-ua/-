@@ -1,0 +1,245 @@
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.body{
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    font-family: "Inter", sans-serif;
+}
+
+
+
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-shadow: 0 10px 100px rgba(0, 0, 0, 0.5);
+}
+.header__inner{
+    min-height: 100vh;
+}
+
+.header{
+    background-image: url(../images/2page/fone.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}    
+.header-top{
+    display: flex;
+
+    background-image: url(../images/novabar.svg);
+    background-repeat: no-repeat;
+    background-position: top 20px center;
+}
+
+
+.menu__list{
+    display: flex;
+    gap: 0 32px;
+    padding-top: 38px;
+    
+}
+.menu__link{
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/* Текст із постійним підкресленням */
+.underline-hover {
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    color: #34495e;
+    text-decoration: none; /* Відключаємо стандартне підкреслення */
+}
+
+.menu__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%; /* Лінія одразу покриває весь текст */
+    height: 2px;
+    background-color: #FFDAB9;
+    opacity: 0; /* Лінія початково невидима */
+    transition: opacity 0.5s ease; /* Плавний ефект появи */
+}
+
+.menu__link:hover::after {
+    opacity: 1; /* Лінія стає видимою */
+}
+
+
+
+
+    menu__link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        background-color: #FFDAB9;
+        transition: width 0.5s ease;
+    }
+
+    menu__link:hover::after {
+        width: 100%; /* Підкреслення повністю з'являється */
+    }
+
+
+
+
+
+
+.logo{
+    padding-top: 29px;
+    padding-left: 90px;
+    padding-right: 35px;
+    
+}
+.logo__img{
+    transition: transform 0.5s ease; /* Плавний ефект */
+}
+
+.logo:hover .logo__img {
+    transform: scale(1.2); /* Збільшення */
+}
+.logo__footer:hover .logo__img{
+    transform: scale(1.2); /* Збільшення */
+}
+
+.header-content{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+
+.gallery{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1300px;
+}
+.foto__sadovi{
+    width: 300px;
+    height: 300px;
+    transition: transform 0.5s ease; /* Плавний ефект */
+}
+.foto:hover .foto__sadovi {
+    transform: scale(1.1); /* Збільшення */
+}
+
+.header-content__box{
+    color: #F5F5DC;
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+
+.header__titel{
+    font-size: 48px;
+    padding-top: 42px;
+    padding-bottom: 24px;
+}
+
+.header__text{
+    font-size: 24px;
+    padding-bottom: 80px;
+}
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+    background-color: #263238;
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 195px;
+ 
+}
+
+.social__box{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-top: 51px;
+    max-width: 1300px;
+    margin: 0 50px;
+
+}
+
+ .orange-line{
+    justify-content: center;
+    height: 1px; /* Висота лінії */
+    background-color: #FF7F50; /* Помаранчевий колір */
+    max-width: 1300px; /* Ширина на весь блок */
+    margin: 20px 50px; /* Відступи зверху і знизу */
+  }
+
+.social__list{
+    display: flex;
+    text-transform: uppercase;
+    gap: 0 12px;
+    
+}
+
+.footer__text{
+    display: flex;
+    text-transform: uppercase;
+    gap: 0 24px;
+    color: #FFDAB9;
+    justify-content: center;
+    font-size: 14px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

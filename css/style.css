@@ -59,7 +59,41 @@ ul{
     text-transform: uppercase;
     font-size: 16px;
     color: #ffffff;
+
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
 }
+
+
+/* Текст із постійним підкресленням */
+.underline-hover {
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    color: #34495e;
+    text-decoration: none; /* Відключаємо стандартне підкреслення */
+}
+
+.menu__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%; /* Лінія одразу покриває весь текст */
+    height: 2px;
+    background-color: #FFDAB9;
+    opacity: 0; /* Лінія початково невидима */
+    transition: opacity 0.5s ease; /* Плавний ефект появи */
+}
+
+.menu__link:hover::after {
+    opacity: 1; /* Лінія стає видимою */
+}
+
+
+
+
 
 .header-content{
     text-align: center;
@@ -83,6 +117,16 @@ ul{
     padding-right: 35px;
 }
 
+.logo__img{
+    transition: transform 0.5s ease; /* Плавний ефект */
+}
+
+.logo:hover .logo__img{
+    transform: scale(1.2); /* Збільшення */
+}
+.logo__footer:hover .logo__img{
+    transform: scale(1.2); /* Збільшення */
+}
 .header-content__text{
     padding-top:  45px;
     font-size: 64px;

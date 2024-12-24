@@ -398,19 +398,34 @@ ul{
 }
 
     
+@media (max-width: 400px){
+    .header__titel{
+        color: #ff0095;
+    }
+
+}
+
+
+@media (max-width: 390px){
+    .header__titel{
+        color: #9900ff;
+    }
+
+}
 
 
 
+@media (max-width: 380px){
+    .header__titel{
+        color: #002fff;
+    }
 
-
-
-
-
+}
 
 
 @media (max-width: 370px){
     .header__titel{
-        color: #ff0000;
+        color: #00f7ff;
     }
 
 }

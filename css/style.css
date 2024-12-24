@@ -398,7 +398,7 @@ ul{
 }
 
     
-@media (max-width: 400px){
+@media (max-width: 450px){
     .header__titel{
         color: #ff0000;
     }
@@ -406,7 +406,7 @@ ul{
 }
 
 
-@media (max-width: 390px){
+@media (max-width: 440px){
     .header__titel{
         color: #9900ff;
     }
@@ -415,7 +415,7 @@ ul{
 
 
 
-@media (max-width: 380px){
+@media (max-width: 430px){
     .header__titel{
         color: #002fff;
     }
@@ -423,7 +423,7 @@ ul{
 }
 
 
-@media (max-width: 370px){
+@media (max-width: 420px){
     .header__titel{
         color: #00f7ff;
     }
@@ -432,7 +432,7 @@ ul{
 
 
 
-@media (max-width: 360px){
+@media (max-width: 410px){
     .header__titel{
         color: #ffee00;
     }
@@ -443,7 +443,7 @@ ul{
 
 
 
-@media (max-width: 350px){
+@media (max-width: 400px){
     .header__titel{
         color: #00ff0d;
     }

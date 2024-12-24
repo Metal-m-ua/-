@@ -398,12 +398,7 @@ ul{
 }
 
     
-@media (max-width: 470px){
-    .header__titel{
-        color: #ff0000;
-    }
 
-}
 
 
 @media (max-width: 460px){
@@ -449,4 +444,11 @@ ul{
     }
 
     
+}
+
+@media (max-width: 410px){
+    .header__titel{
+        color: #ff0000;
+    }
+
 }

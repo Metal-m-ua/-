@@ -91,7 +91,7 @@ modals.forEach((modal, index) => {
 
 // 🎯 Обробка свайпу
 function handleSwipe(modal, index) {
-    const SWIPE_THRESHOLD = 50; // Мінімальна відстань для свайпу
+    const SWIPE_THRESHOLD = 100; // Мінімальна відстань для свайпу
 
     if (touchStartX - touchEndX > SWIPE_THRESHOLD) {
         // Свайп вліво (наступне зображення)

@@ -311,8 +311,25 @@ body.modal-open {
     font-size: 10px;
 }
 
-
-
-
+.modal img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
+.close-btn {
+    top: 10px;
+    right: 5px;
+}
+
+.prev-btn {
+    left: 5px;
+}
+
+.next-btn {
+    right: 5px;
+}
+.close-btn, .prev-btn, .next-btn{
+    font-size: 2em;
+}
+
+}

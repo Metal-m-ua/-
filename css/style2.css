@@ -116,10 +116,13 @@ ul{
     padding-top: 29px;
     padding-left: 90px;
     padding-right: 35px;
-    
 }
+
+  
+  
 .logo__img{
     transition: transform 0.5s ease; /* Плавний ефект */
+    size: 50px;
 }
 
 .logo:hover .logo__img {
@@ -212,6 +215,7 @@ body.modal-open {
 }
  .gallery__hover:hover .Photo__width {
     transform: scale(1.1); /* Збільшення */
+    
 }
 
 .header-content__box{
@@ -329,7 +333,7 @@ body.modal-open {
     right: 5px;
 }
 .close-btn, .prev-btn, .next-btn{
-    font-size: 2em;
+    font-size: 3em;
 }
 
 }

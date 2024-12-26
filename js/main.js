@@ -130,3 +130,8 @@ function resetZoom() {
         modalImage.style.transform = 'scale(1)';
     }
 }
+
+
+
+
+

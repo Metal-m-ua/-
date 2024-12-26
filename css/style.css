@@ -91,6 +91,8 @@ ul{
 
 
 
+
+
 .header-content{
     text-align: center;
 }
@@ -437,60 +439,4 @@ ul{
         font-size: 10px;
     }
  
-}
-
-    
-
-
-
-@media (max-width: 460px){
-    .header__titel{
-        color: #9900ff;
-    }
-
-}
-
-
-
-@media (max-width: 450px){
-    .header__titel{
-        color: #002fff;
-    }
-
-}
-
-
-@media (max-width: 440px){
-    .header__titel{
-        color: #00f7ff;
-    }
-
-}
-
-
-
-@media (max-width: 430px){
-    .header__titel{
-        color: #ffee00;
-    }
-
-    
-}
-
-
-
-
-@media (max-width: 420px){
-    .header__titel{
-        color: #00ff0d;
-    }
-
-    
-}
-
-@media (max-width: 410px){
-    .header__titel{
-        color: #ff0000;
-    }
-
 }

@@ -42,9 +42,21 @@ ul{
     position: absolute; 
     width: 100%;
     max-width: 1400px; /* Ширина відповідає контейнеру */
-
-
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
 }
+
+  
+  /* Анімація для контенту */
+  @keyframes slideIn {
+    from {
+      
+      opacity: 0;
+    }
+    to {
+      
+      opacity: 1;
+    }
+  }
 /* Модальне вікно */
 .modalk {
     display: none;
@@ -54,8 +66,9 @@ ul{
     max-width: 1400px;
     background-color: rgba(38, 50, 56, 0.7);
     height: 50px;
-
     align-content: center;
+    animation: slideIn 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   }
   /* Вміст модального вікна */
   .modalk-content {
@@ -221,12 +234,8 @@ ul{
     max-width: 90%;
     max-height: 90%;
     transition: transform 0.3s ease-in-out; /* Плавний ефект для масштабу */
-    cursor: grab;
 }
 
-.modal img:active {
-    cursor: grabbing;
-}
 
 .modal img.hidden {
     display: none;
@@ -264,6 +273,7 @@ body.modal-open {
     width: 300px;
     height: 300px;
     transition: transform 0.5s ease; /* Плавний ефект */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
 }
  .gallery__hover:hover .Photo__width {
     transform: scale(1.1); /* Збільшення */

@@ -60,6 +60,9 @@ ul{
     max-width: 1400px; /* Ширина відповідає контейнеру */
     z-index: 1000;
     transition: opacity 0.3s ease; /* Плавна анімація прозорості */
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
 }
 
 
@@ -94,6 +97,7 @@ ul{
     background-color: #FFDAB9;
     opacity: 0; /* Лінія початково невидима */
     transition: opacity 0.5s ease; /* Плавний ефект появи */
+    
 }
 
 .menu__link:hover::after {
@@ -113,6 +117,22 @@ ul{
   height: 50px;
   z-index: 999;
   align-content: center;
+  animation: slideIn 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+
+
+  
+  /* Анімація для контенту */
+  @keyframes slideIn {
+    from {
+      
+      opacity: 0;
+    }
+    to {
+      
+      opacity: 1;
+    }
   }
   /* Вміст модального вікна */
   .modal-content {
@@ -165,8 +185,7 @@ ul{
 }
 
 .header--content__btn{
-    padding-top: 50px;
-    
+    padding-top: 50px; 
 }
 
 .header-content__btn{
@@ -175,48 +194,23 @@ ul{
     background-color: #26323883;
     padding: 18px 35px;
     border-radius: 55px;
-    
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+            transition: all 0.3s ease-in-out; 
+            
 }
+
+.header-content__btn:hover {
+    background-color: rgba(38, 50, 56, 0.8); /* Темніший зелений фон */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Додає тінь */
+}
+
 
 .logo{
     padding-top: 9px;
     padding-left: 90px;
-    padding-right: 35px;
-    -webkit-animation: puff-in-center 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-	        animation: puff-in-center 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    padding-right: 35px;   
 }
-@-webkit-keyframes puff-in-center {
-    0% {
-      -webkit-transform: scale(2);
-              transform: scale(2);
-      -webkit-filter: blur(4px);
-              filter: blur(4px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-filter: blur(0px);
-              filter: blur(0px);
-      opacity: 1;
-    }
-  }
-  @keyframes puff-in-center {
-    0% {
-      -webkit-transform: scale(2);
-              transform: scale(2);
-      -webkit-filter: blur(4px);
-              filter: blur(4px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-filter: blur(0px);
-              filter: blur(0px);
-      opacity: 1;
-    }
-  }
 
 .logo__img{
     transition: transform 0.5s ease; /* Плавний ефект */
@@ -237,7 +231,37 @@ ul{
     1px -1px 0 black,
     -1px 1px 0 black,
     1px 1px 0 black;
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
 }
+@-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  
+  
+  
+  
 
 .header-content__text1{
     padding-top: 25px;
@@ -250,6 +274,8 @@ ul{
     1px -1px 0 black,
     -1px 1px 0 black,
     1px 1px 0 black;
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
 }
 
 .header__titel{
@@ -262,8 +288,44 @@ ul{
     1px -1px 0 black,
     -1px 1px 0 black,
     1px 1px 0 black;
+    -webkit-animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-
+@-webkit-keyframes focus-in-contract-bck {
+    0% {
+      letter-spacing: 1em;
+      -webkit-transform: translateZ(300px);
+              transform: translateZ(300px);
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(12px);
+              transform: translateZ(12px);
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @keyframes focus-in-contract-bck {
+    0% {
+      letter-spacing: 1em;
+      -webkit-transform: translateZ(300px);
+              transform: translateZ(300px);
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(12px);
+              transform: translateZ(12px);
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+  
 
 
 

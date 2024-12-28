@@ -34,29 +34,80 @@ ul{
     background-attachment: fixed;
     
 }    
-.header-top{
+.headertop{
+    background-color: #263238;
+    margin-top: 20px;
     display: flex;
+    height: 50px;
+    position: absolute; 
+    width: 100%;
+    max-width: 1400px; /* Ширина відповідає контейнеру */
 
-    background-image: url(../images/novabar.svg);
-    background-repeat: no-repeat;
-    background-position: top 20px center;
+
+}
+/* Модальне вікно */
+.modalk {
+    display: none;
+    position: absolute;
+    margin-top: 50px;
+    width: 100%;
+    max-width: 1400px;
+    background-color: rgba(38, 50, 56, 0.7);
+    height: 50px;
+
+    align-content: center;
+  }
+  /* Вміст модального вікна */
+  .modalk-content {
+    font-size: 14px;
+    font-weight: 400;
+    color: #FFDAB9;
+  }
+  .kategory{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .kategory__link{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding: 18px 0;
+  }
+
+  .kategory__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 12px;
+    width: 100%; /* Лінія одразу покриває весь текст */
+    height: 2px;
+    background-color: #FFDAB9;
+    opacity: 0; /* Лінія початково невидима */
+    transition: opacity 0.5s ease; /* Плавний ефект появи */
+}
+
+.kategory__link:hover::after {
+    opacity: 1; /* Лінія стає видимою */
 }
 
 
 .menu__list{
     display: flex;
     gap: 0 32px;
-    padding-top: 38px;
     
 }
 .menu__link{
-    text-transform: uppercase;
-    font-size: 16px;
+    font-size: 20px;
     color: #ffffff;
-    
+    padding: 15px 0;
     position: relative;
     display: inline-block;
     text-decoration: none;
+}
+.menu__link1{
+    cursor: pointer;
 }
 
 
@@ -73,7 +124,7 @@ ul{
     content: '';
     position: absolute;
     left: 0;
-    bottom: -5px;
+    bottom: 12px;
     width: 100%; /* Лінія одразу покриває весь текст */
     height: 2px;
     background-color: #FFDAB9;
@@ -113,7 +164,7 @@ ul{
 
 
 .logo{
-    padding-top: 29px;
+    padding-top: 9px;
     padding-left: 90px;
     padding-right: 35px;
 }
@@ -133,6 +184,7 @@ ul{
 }
 
 .header-content{
+    padding-top: 100px;
     text-align: center;
     display: flex;
     justify-content: center;

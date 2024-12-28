@@ -91,7 +91,7 @@ modals.forEach((modal, index) => {
 
 // 🎯 Обробка свайпу
 function handleSwipe(modal, index) {
-    const SWIPE_THRESHOLD = 200; // Мінімальна відстань для свайпу
+    const SWIPE_THRESHOLD = 100; // Мінімальна відстань для свайпу
 
     if (touchStartX - touchEndX > SWIPE_THRESHOLD) {
         // Свайп вліво (наступне зображення)
@@ -133,5 +133,28 @@ function resetZoom() {
 
 
 
-
-
+// Функція для відкриття/закриття модального вікна
+function toggleModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';
+  }
+  
+  // Відстеження прокрутки для анімації прозорості
+  window.addEventListener('scroll', () => {
+    const headertop = document.querySelector('.headertop');
+    const modal = document.getElementById('modal');
+    
+    // Перевіряємо, наскільки сторінка прокручена
+    if (window.scrollY > 50) {
+        headertop.classList.add('scrolled');
+      modal.classList.add('scrolled');
+    } else {
+        headertop.classList.remove('scrolled');
+      modal.classList.remove('scrolled');
+    }
+  });
+  
+  function toggleModalk() {
+    const modalk = document.getElementById('modalk');
+    modalk.style.display = (modalk.style.display === 'none' || modalk.style.display === '') ? 'block' : 'none';
+  }

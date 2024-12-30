@@ -38,6 +38,7 @@ ul{
     background-color: #263238;
     margin-top: 20px;
     display: flex;
+    justify-content: space-between;
     height: 50px;
     position: absolute; 
     width: 100%;
@@ -108,7 +109,7 @@ ul{
 
 .menu__list{
     display: flex;
-    gap: 0 32px;
+    gap: 0 50px;
     
 }
 .menu__link{
@@ -177,12 +178,11 @@ ul{
 
 
 .logo{
-    padding-top: 9px;
-    padding-left: 90px;
-    padding-right: 35px;
+    display: flex;
+    align-items: center;
+    margin-left: 70px;
+    margin-right: 63px;  
 }
-
-  
   
 .logo__img{
     transition: transform 0.5s ease; /* Плавний ефект */
@@ -195,6 +195,28 @@ ul{
 .logo__footer:hover .logo__img{
     transform: scale(1.2); /* Збільшення */
 }
+
+.phone:hover .imgPhone{
+    transform: scale(1.2);
+}
+.phone{
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    margin-right: 50px;
+}
+.imgPhone{
+    display: flex;
+    height: 20px;
+    transition: transform 0.5s ease;
+}
+
+.phone__number{
+    color: #FFDAB9;
+    padding: 17px 0;
+}
+
+
 
 .header-content{
     padding-top: 100px;

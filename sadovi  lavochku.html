@@ -15,31 +15,31 @@
   <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
-    <header class="header">
+    <header id="header" class="header">
         <div class="container">
             <div class="header__inner">
               <div class="headertop">
-                <a class="logo" href="index.html">
+                <a class="logo" href="index.html#header">
                   <img class="logo__img" src="images/logo.svg" alt="логотип м">
                 </a>
                 <nav class="menu">
                   <ul class="menu__list">
                     <li class="menu__item">
-                      <a class="menu__link" href="index.html">Головна</a>
+                      <a class="menu__link" href="index.html#header">Головна</a>
                     </li>
                     <li class="menu__item">
                       <a class="menu__link menu__link1"  onclick="toggleModalk()">Категорії</a></li>
                     </li>
                     <li class="menu__item">
-                      <a class="menu__link" href="#">Контакти</a>
+                      <a class="menu__link" href="index.html#kontakty">Контакти</a>
                     </li>
                     <li class="menu__item">
-                      <a class="menu__link" href="#">Про нас</a>
+                      <a class="menu__link" href="index.html#main">Про нас</a>
                     </li>
                   </ul>
                 </nav>
                 <div class="phone">
-                  <img class="imgPhone" src="images/iconPhone.svg" alt="">
+                  <img class="imgPhone" src="images/iconphon.svg" alt="">
                   <a class="phone__number" href="tel:+380937525699">+380 937 525 699</a>
                 </div>
                 <div id="modalk" class="modalk">
@@ -132,41 +132,64 @@
         </div>
     </header>
     <footer class="footer">
-        <div class="container">
-          <div class="footer__box">
-            <div class="social__box">
-              <a class="logo__footer" href="index.html">
-                <img class="logo__img" src="images/logo.svg" alt="логотип м">
-              </a>
-              <ul class="social__list">
-                <li class="social__list-item">
-                <a class="social__list-link" href="#">
-                  <img src="images/logo1.svg" alt="">
-                </a>
-                </li>
-                <li class="social__list-item">
-                <a class="social__list-link" href="#">
-                  <img src="images/logo 2.svg" alt="">
-                </a>
-                </li>
-                <li class="social__list-item">
-                <a class="social__list-link" href="#">
-                  <img src="images/logo 3.svg" alt="">
-                </a>
-                </li>
-              </ul>
+      <div class="container">
+        <div class="footer__box">
+          <a class="logo__footer">
+            <p>METAL</p>
+          </a>
+        </div>
+        <div class="orange-line"></div>
+        <div class="footer-box">
+          <ul class="footer__menu">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="index.html#header">Головна</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="sadovi  lavochku.html#header" onclick="toggleModalk()">Категорії</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#kontakty">Контакти</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="index.html#main">Про нас</a>
+            </li>
+          </ul>
+          <div class="adreas__box">
+            <a href="https://www.google.com.ua/maps/@50.4916861,25.9563229,17z?hl=uk&authuser=1&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">
+              <img class="loc__img" src="images/location-dot-solid 1.svg" alt="">
+            <p class="adreas">Рівне. Дубенський р-н. с.Крилів</p>
+            </a>
+            <p class="Copyright">© 2025</p>
+          </div>
+          <div id="kontakty" class="kontakty__box">
+            <div class="phone__footer">
+              <img class="phone-img" src="images/iconPhone.svg" alt="">
+              <a href="tel:+380937525699">+380 937 525 699</a>
             </div>
-            <div class="orange-line"></div>
-            <ul class="footer__text">
-              <li class="foot__text">© 2024 Всі права захищено</li>
-              <li class="foot__text">Privacy Policy</li>
-              <li class="foot__text">Terms of Service</li>
-              <li class="foot__text">Cookies Settings</li>
+            <ul class="social__list">
+              <li class="social__list-item sl1">
+              <a class="social__list-link" href="viber://chat?number=+380937525699">
+                <img class="img__social is1" src="images/viber-brands-solid.svg" alt="">
+                <p>Viber</p>
+              </a>
+              </li>
+              <li class="social__list-item sl2">
+              <a class="social__list-link" href="https://t.me/mishaKr97">
+                <img class="img__social is2" src="images/telegram-brands-solid.svg" alt="">
+                <p>Telegram</p>
+              </a>
+              </li>
+              <li class="social__list-item sl3">
+              <a class="social__list-link" href="https://wa.me/380937525699">
+                <img class="img__social is3" src="images/whatsapp-brands-solid.svg" alt="">
+                <p>Whatsapp</p>
+              </a>
+              </li>
             </ul>
           </div>
-         
         </div>
-      </footer>
+      </div>
+    </footer>
   
 
 

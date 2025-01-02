@@ -16,27 +16,27 @@
 </head>
 <body>
 
-  <header class="header">
+  <header id="header" class="header">
     <div class="header1">
       <div class="container">
         <div class="header__inner">
           <div class="headertop">
-            <a class="logo" href="#">
+            <a class="logo" href="#header">
               <img class="logo__img" src="images/logo.svg" alt="логотип м">
             </a>
             <nav class="menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a class="menu__link" href="#">Головна</a>
+                  <a class="menu__link" href="#header">Головна</a>
                 </li>
                 <li class="menu__item">
                   <a class="menu__link menu__link1"  onclick="toggleModal()">Категорії</a></li>
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link" href="#">Контакти</a>
+                  <a class="menu__link" href="#kontakty">Контакти</a>
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link" href="#">Про нас</a>
+                  <a class="menu__link" href="#main">Про нас</a>
                 </li>
               </ul>
             </nav>
@@ -82,7 +82,7 @@
                   METAL
                 </h1>
                 <p class="header-content__text1">
-                  Виготовимо металовироби та металоконструкції любої складності. За вашими розмірами та побажаннями. 
+                  Професійне виготовлення металовиробів та конструкцій будь-якої складності за вашими побажаннями!
                 </p>
                 <div class="header--content__btn">
                   <a class="header-content__btn" href="#main">Дізнатися більше</a>
@@ -94,41 +94,73 @@
       </div>
     </div>
   </header>
-  <main class="main">
-    <div id="main"></div>
+  <main id="main" class="main">
     <section class="about">
       <div class="top-background">
         <div class="container">
           <div class="info__list-box">
             <div class="box">
-              <h3>Виконано більше 100 замовлень та задоволоних замовників</h3>
-              <p>Більше 5 років роботи виготовлення металовиробів та конструкцій будь-якої складності</p>
+              <h3>Досвід роботи понад 5 років</h3>
+              <p>За цей час ми успішно реалізували десятки проєктів, працюючи як з приватними клієнтами, так і з компаніями різного масштабу.</p>
             </div>
-            <div class="box box-1">
-              <h3>Власне виробництво</h3>
-              <p>Мінімальні терміни виготовлення за справедливу ціну</p>
+            <div class="box">
+              <h3>Широкий асортимент послуг</h3>
+              <p>Ми спеціалізуємося на виробництві металоконструкцій будь-якої складності. А також нестандартних металовиробів за індивідуальними кресленнями.</p>
             </div>
-            <div class="box box-2">
-              <h3>Виготовимо будь-які металовироби на замовлення</h3>
-              <p>Любимо експерементувати та реалізовувати їх у життя</p>
+            <div class="box">
+              <h3>Індивідуальний підхід до кожного клієнта</h3>
+              <p>Ми пропонуємо комплексні рішення, які враховують ваші потреби, бюджет і строки виконання.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="bottom-background">
         <div class="container">
-          <div class="info__inner">
-            <div class="info__box-text">
-              <div class="text__btn-item">
-                <p class="info__text">
-                  У нас Ви можете переглянути вже готові вироби та конструкції, та замовити. Переходьте у вкладку</p>
-                   <a class="btn_kategory" href="#">Категорії</a>
+          <div class="info-inner">
+            <div class="info__inner">
+              <div class="info__header">
+                <h2 class="name__h2">METAL</h2>
+                <p class="h2__text">Ми спеціалізуємося на виготовленні металовиробів та металоконструкцій будь-якої складності. Виконуємо замовлення за індивідуальними проєктами, гарантуємо високу якість, точність і дотримання строків.</p>
               </div>
-              <div class="text__btn-item">
-                <p class="info__text1">
-                  Також можна замовити по власних ескізах, розмірах та дрібних деталях.
-                  Звертатись за контактами</p>
-                   <a class="btn__kontakty" href="#">Контакти</a>
+            </div>
+            <div class="poslygu">
+              <div class="poslygu__box">
+                <div class="poslygu__list">
+                  <img class="icon__poslygu" src="images/architecture.svg" alt="">
+                  <div class="text__poslygu-box">
+                    <h4 class="text__h4">Проектування</h4>
+                    <p class="text__poslygu">
+                    Ми пропонуємо індивідуальне проектування металовиробів та конструкцій будь-якої складності, що відповідають вашим вимогам.
+                  </p>
+                  </div>
+                </div>
+                <div class="poslygu__list">
+                  <img class="icon__poslygu" src="images/welder.svg" alt="">
+                  <div class="text__poslygu-box">
+                    <h4 class="text__h4">Виробництво</h4>
+                    <p class="text__poslygu">
+                    Виготовляємо металовироби та конструкції за індивідуальними кресленнями. Любимо експерементувати та реалізовувати їх у життя.
+                  </p>
+                  </div>
+                </div>
+                <div class="poslygu__list">
+                  <img class="icon__poslygu" src="images/welder2.svg" alt="">
+                  <div class="text__poslygu-box">
+                    <h4 class="text__h4">Монтажні роботи</h4>
+                    <p class="text__poslygu">
+                    Забезпечуємо монтаж виготовлених конструкцій на об'єкті замовника. Дотримуємося строків та гарантуємо якість виконаних робіт.
+                  </p>
+                  </div>
+                </div>
+                <div class="poslygu__list">
+                  <img class="icon__poslygu" src="images/Spray.svg" alt="">
+                  <div class="text__poslygu-box">
+                    <h4 class="text__h4">Фарба та декор</h4>
+                    <p class="text__poslygu">
+                    Фарбування виконується у два шари: перший шар – ґрунт-емаль, другий – фарба. Додатково за бажанням замовника є можливість нанесення декоративної фарби.
+                  </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -139,7 +171,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__box">
-        <a class="logo__footer" href="#">
+        <a class="logo__footer">
           <p>METAL</p>
         </a>
       </div>
@@ -147,44 +179,46 @@
       <div class="footer-box">
         <ul class="footer__menu">
           <li class="footer__menu-item">
-            <a class="footer__menu-link" href="#">Головна</a>
+            <a class="footer__menu-link" href="#header">Головна</a>
           </li>
           <li class="footer__menu-item">
-            <a class="footer__menu-link" href="#">Категорії</a>
+            <a class="footer__menu-link menu__link1" onclick="toggleModal()">Категорії</a>
           </li>
           <li class="footer__menu-item">
-            <a class="footer__menu-link" href="#">Контакти</a>
+            <a class="footer__menu-link" href="#kontakty">Контакти</a>
           </li>
           <li class="footer__menu-item">
-            <a class="footer__menu-link" href="#">Про нас</a>
+            <a class="footer__menu-link" href="#main">Про нас</a>
           </li>
         </ul>
         <div class="adreas__box">
-          <img class="loc__img" src="images/location-dot-solid 1.svg" alt="">
-          <a class="adreas" href="#">Рівне. Дубенський р-н. с.Крилів</a>
+          <a href="https://www.google.com.ua/maps/@50.4916861,25.9563229,17z?hl=uk&authuser=1&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">
+            <img class="loc__img" src="images/location-dot-solid 1.svg" alt="">
+          <p class="adreas">Рівне. Дубенський р-н. с.Крилів</p>
+          </a>
           <p class="Copyright">© 2025</p>
         </div>
-        <div class="kontakty__box">
+        <div id="kontakty" class="kontakty__box">
           <div class="phone__footer">
             <img class="phone-img" src="images/iconPhone.svg" alt="">
             <a href="tel:+380937525699">+380 937 525 699</a>
           </div>
           <ul class="social__list">
-            <li class="social__list-item">
-            <a class="social__list-link" href="#">
-              <img class="img__social" src="images/viber-brands-solid.svg" alt="">
+            <li class="social__list-item sl1">
+            <a class="social__list-link" href="viber://chat?number=+380937525699">
+              <img class="img__social is1" src="images/viber-brands-solid.svg" alt="">
               <p>Viber</p>
             </a>
             </li>
-            <li class="social__list-item">
-            <a class="social__list-link" href="#">
-              <img class="img__social" src="images/telegram-brands-solid.svg" alt="">
+            <li class="social__list-item sl2">
+            <a class="social__list-link" href="https://t.me/mishaKr97">
+              <img class="img__social is2" src="images/telegram-brands-solid.svg" alt="">
               <p>Telegram</p>
             </a>
             </li>
-            <li class="social__list-item">
-            <a class="social__list-link" href="#">
-              <img class="img__social" src="images/whatsapp-brands-solid.svg" alt="">
+            <li class="social__list-item sl3">
+            <a class="social__list-link" href="https://wa.me/380937525699">
+              <img class="img__social is3" src="images/whatsapp-brands-solid.svg" alt="">
               <p>Whatsapp</p>
             </a>
             </li>

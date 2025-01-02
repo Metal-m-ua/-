@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 a{
     text-decoration: none;
     color: inherit;
@@ -150,33 +154,6 @@ ul{
     opacity: 1; /* Лінія стає видимою */
 }
 
-
-
-
-    menu__link::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -5px;
-        width: 0;
-        height: 2px;
-        background-color: #FFDAB9;
-        transition: width 0.5s ease;
-    }
-
-    menu__link:hover::after {
-        width: 100%; /* Підкреслення повністю з'являється */
-    }
-
-
-
-
-
-
-    
-
-
-
 .logo{
     display: flex;
     align-items: center;
@@ -207,7 +184,8 @@ ul{
 }
 .imgPhone{
     display: flex;
-    height: 20px;
+    padding-top: 5px;
+    height: 30px;
     transition: transform 0.5s ease;
 }
 
@@ -335,44 +313,132 @@ body.modal-open {
     background-color: #263238;
     background-repeat: no-repeat;
     background-position: top center;
-    height: 195px;
- 
+    height: 329px;
 }
 
-.social__box{
+.footer__box{
     display: flex;
-    justify-content: space-between;
-    padding-bottom: 10px;
-    padding-top: 51px;
-    max-width: 1300px;
-    margin: 0 50px;
+    flex-direction: column;
+    align-items: center;   
+} 
 
+.logo__footer{
+    padding-top: 25px;
+    font-size: 72px;
+    color: hsl(0, 0%, 90%);
+    font-family: "Aclonica", serif;
+    text-shadow: 
+    -3px -3px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;  
 }
 
- .orange-line{
+.orange-line{
     justify-content: center;
     height: 1px; /* Висота лінії */
     background-color: #FF7F50; /* Помаранчевий колір */
     max-width: 1300px; /* Ширина на весь блок */
-    margin: 20px 50px; /* Відступи зверху і знизу */
-  }
+    margin: 15px 50px; /* Відступи зверху і знизу */
+}
+
+.footer-box{
+    display: flex;
+    justify-content: space-between;  
+    margin: 30px 250px;
+}
+
+.footer__menu{
+    display: flex;
+    flex-direction: column;
+    gap: 7px 0px;
+    font-size: 20px;
+    color: #FFDAB9;
+    width: 144px;
+    text-align: center;
+}
+
+.adreas__box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+    text-align: center;
+    color: #FFDAB9;
+}
+
+.loc__img{
+    width: 30px;
+    margin-bottom: 15px ;
+    transition: transform 0.5s ease;
+}
+
+.adreas__box:hover .loc__img{
+    transform: scale(1.3); /* Збільшення */
+}
+
+.adreas{
+    margin-bottom: 36px;
+    font-size: 18px;
+} 
+
+.Copyright{
+    color: #F5F5DC;
+    margin: 20px 0;
+}
+
+.kontakty__box{
+    display: flex;
+    flex-direction: column;
+    color: #FFDAB9;
+    gap: 5px 0px;
+    text-align: center;
+}
+
+.phone__footer{
+    display: flex;
+    align-content: center;
+    margin-top: 5px;
+}
+
+.phone__footer:hover .phone-img{
+    transform: scale(1.2); /* Збільшення */
+}
+
+.phone-img{
+    width: 25px;
+    transition: transform 0.2s ease;
+}
 
 .social__list{
     display: flex;
-    text-transform: uppercase;
-    gap: 0 12px;
-    
+    flex-direction: column;
+    gap: 5px 0px;
+    font-size: 18px;
 }
 
-.footer__text{
+.social__list-link{
     display: flex;
-    text-transform: uppercase;
-    gap: 0 24px;
-    color: #FFDAB9;
-    justify-content: center;
-    font-size: 14px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px 10px;  
+}
+ 
+.img__social{
+    width: 20px; 
+    transition: transform 0.2s ease;   
+}   
+
+.sl1:hover .is1{
+    transform: scale(1.2); /* Збільшення */
+}
+
+.sl2:hover .is2{
+    transform: scale(1.2); /* Збільшення */
+}
+
+.sl3:hover .is3{
+    transform: scale(1.2); /* Збільшення */
 }
 
 

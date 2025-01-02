@@ -289,7 +289,7 @@ ul{
 
 .header-content__text1{
     padding-top: 25px;
-    font-size: 32px;
+    font-size: 36px;
     max-width: 750px;
     margin: 0 auto;
     color: #F5F5DC;
@@ -368,7 +368,7 @@ ul{
 }
 
 .bottom-background{
-    background-image: url(../images/info.png);
+    background-image: url(../images/infof.png);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -389,16 +389,13 @@ ul{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 332px;
+    max-width: 290px;
     color: #FFDAB9;
+    margin: 0 10px;
 }
 
 .box h3 {
     margin: 0 0 10px; /* Відступ знизу */
-    font-size: 20px; /* Розмір заголовка */
-}
-.box-1 h3 {
-    margin: 0 0 30px; /* Відступ знизу */
     font-size: 20px; /* Розмір заголовка */
 }
 
@@ -407,66 +404,80 @@ ul{
     font-size: 16px; /* Розмір підзаголовка */
     line-height: 1.2; /* Висота рядка */
 }
-.box-1 p, .box-2 p  {
-    padding-bottom: 20px;
+
+.info-inner{
+    height: 100vh;
 }
 
 .info__inner{
     display: flex;
-    gap: 100px;
-    height: 100vh;
-    font-size: 24px;
-    color: #F5F5DC;
-    text-align: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     
 }
 
-.info__box-text{
+.name__h2{
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-size: 42px;
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.h2__text{
+    font-size: 22px;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.info__header{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 200px 0;
-    
-    
+    width: 650px;
+    text-align: center;
+    color: #FFDAB9;
 }
 
 
 
-    
 
-
-
-.info__text{
-    padding-bottom: 30px;
-    padding-left: 490px;
-    max-width: 810px;
+.poslygu__box{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px 100px;
+    justify-items: center;
+    margin: 100px 50px;
 }
 
-.info__text1{
-    
-    padding-bottom: 30px;
-    padding-right: 490px;
-    max-width: 810px;
-}
-
-.btn_kategory{
-    margin-left: 490px;
-    border: 2px solid #FF7F50;
-    padding: 4px 40px;
-    border-radius: 55px;
+.poslygu__list{
+    display: flex;
+    gap: 0 20px;
+    width: 490px;
     
 }
-
-
-.btn__kontakty{
-    
-    padding-right: 490px;
-    border: 2px solid #FF7F50;
-    padding: 4px 40px;
-    border-radius: 55px;
-    margin-right: 490px;
+.icon__poslygu{
+    width: 160px;
+    height: 160px;
 }
+    
+.text__h4{
+    font-size: 24px;
+    color: #FFDAB9;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.text__poslygu{
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+
+
 
 
 
@@ -481,7 +492,7 @@ ul{
     background-color: #263238;
     background-repeat: no-repeat;
     background-position: top center;
-    height: 326px;
+    height: 329px;
 }
 
 .footer__box{
@@ -530,7 +541,7 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 160px;
+    width: 180px;
     text-align: center;
     color: #FFDAB9;
 }
@@ -538,10 +549,16 @@ ul{
 .loc__img{
     width: 30px;
     margin-bottom: 15px ;
+    transition: transform 0.5s ease;
+}
+
+.adreas__box:hover .loc__img{
+    transform: scale(1.3); /* Збільшення */
 }
 
 .adreas{
-    margin-bottom: 40px;
+    margin-bottom: 36px;
+    font-size: 18px;
 } 
 
 .Copyright{
@@ -560,16 +577,23 @@ ul{
 .phone__footer{
     display: flex;
     align-content: center;
+    margin-top: 5px;
+}
+
+.phone__footer:hover .phone-img{
+    transform: scale(1.2); /* Збільшення */
 }
 
 .phone-img{
     width: 25px;
+    transition: transform 0.2s ease;
 }
 
 .social__list{
     display: flex;
     flex-direction: column;
     gap: 5px 0px;
+    font-size: 18px;
 }
 
 .social__list-link{
@@ -580,18 +604,21 @@ ul{
 }
  
 .img__social{
-    width: 20px;    
+    width: 20px; 
+    transition: transform 0.2s ease;   
 }   
 
+.sl1:hover .is1{
+    transform: scale(1.2); /* Збільшення */
+}
 
+.sl2:hover .is2{
+    transform: scale(1.2); /* Збільшення */
+}
 
-
-
-
-
-
-
-
+.sl3:hover .is3{
+    transform: scale(1.2); /* Збільшення */
+}
 
 
 

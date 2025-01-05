@@ -21,40 +21,7 @@ var swiper = new Swiper(".mySwiper", {
     slidesPerView: 2,
     spaceBetween: 30,
     mousewheel: true,
-    touchReleaseOnEdges: true, // Дозволяє прокрутку за межами Swiper на мобільних
-    on: {
-        reachBeginning: function () {
-            if (!isMobile()) {
-                swiper.mousewheel.disable();
-                window.scrollBy({ top: -100, behavior: 'smooth' });
-                setTimeout(() => swiper.mousewheel.enable(), 500);
-            }
-        },
-        reachEnd: function () {
-            if (!isMobile()) {
-                swiper.mousewheel.disable();
-                window.scrollBy({ top: 100, behavior: 'smooth' });
-                setTimeout(() => swiper.mousewheel.enable(), 500);
-            }
-        },
-        touchMove: function () {
-            if (swiper.isBeginning || swiper.isEnd) {
-                document.body.style.overflowY = "auto"; // Дозволяємо прокрутку сторінки
-            } else {
-                document.body.style.overflowY = "hidden"; // Забороняємо прокрутку сторінки
-            }
-        },
-        touchEnd: function () {
-            document.body.style.overflowY = "auto"; // Відновлюємо прокрутку
-        },
-    },
-});
-
-// Функція для визначення мобільного пристрою
-function isMobile() {
-    return /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
-}
-
+  });
 
 
 

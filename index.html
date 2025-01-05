@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,8 +26,12 @@
               <img class="logo__img" src="images/logo.svg" alt="логотип м">
             </a>
             <nav class="menu">
+              <button class="menu__btn">
+                <svg class="menu__button" width="64px" height="64px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" transform="rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#906464" stroke-width="0.624"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#FFDAB9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+              </button>
               <ul class="menu__list">
-                <li class="menu__item">
+                <div class="menu--list">
+                  <li class="menu__item">
                   <a class="menu__link" href="#header">Головна</a>
                 </li>
                 <li class="menu__item">
@@ -38,6 +43,31 @@
                 <li class="menu__item">
                   <a class="menu__link" href="#main">Про нас</a>
                 </li>
+                </div>
+                <ul class="kategory__menu-open">
+                  <p class="kateg">Категорії</p>
+                  <li class="kategory__item-open">
+                    <a class="kategory__link-open" href="sadovi  lavochku.html">Садові лавочки та столи</a>
+                  </li>
+                  <li class="kategory__item-open">
+                    <a class="kategory__link-open" href="#">Ворота та хвіртки</a>
+                  </li>
+                  <li class="kategory__item-open">
+                    <a class="kategory__link-open" href="#">Дашки та навіси</a>
+                  </li>
+                  <li class="kategory__item-open">
+                    <a class="kategory__link-open" href="#">Сходи та перила</a>
+                  </li>
+                  <li class="kategory__item-open">
+                    <a class="kategory__link-open" href="#">Підвазонники</a>
+                  </li>
+                  <li class="kategory__item-open">
+                    <a class="kategory__link-open" href="#">Конструкції</a>
+                  </li>
+                  <li class="kategory__item-open">
+                    <a class="kategory__link-open" href="#">Інші вироби</a>
+                  </li>
+                </ul>
               </ul>
             </nav>
             <div class="phone">
@@ -93,7 +123,7 @@
         </div>
       </div>
     </div>
-  </header>
+  </header>  
   <main id="main" class="main">
     <section class="about">
       <div class="top-background">
@@ -111,6 +141,23 @@
               <h3>Індивідуальний підхід до кожного клієнта</h3>
               <p>Ми пропонуємо комплексні рішення, які враховують ваші потреби, бюджет і строки виконання.</p>
             </div>
+          </div>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper wrapper__info">
+              <div class="swiper-slide slide__info">
+                <h3>Досвід роботи понад 5 років</h3>
+              <p>За цей час ми успішно реалізували десятки проєктів, працюючи як з приватними клієнтами, так і з компаніями різного масштабу.</p>
+              </div>
+              <div class="swiper-slide slide__info">
+                <h3>Широкий асортимент послуг</h3>
+              <p>Ми спеціалізуємося на виробництві металоконструкцій будь-якої складності. А також нестандартних металовиробів за індивідуальними кресленнями.</p>
+              </div>
+              <div class="swiper-slide slide__info">
+                <h3>Індивідуальний підхід до кожного клієнта</h3>
+              <p>Ми пропонуємо комплексні рішення, які враховують ваші потреби, бюджет і строки виконання.</p>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
@@ -162,12 +209,53 @@
                   </div>
                 </div>
               </div>
+              <div class="swiper swiper-vertical">
+                <div class="swiper-wrapper wrapper-vertical">
+                  <div class="swiper-slide slide__poslygu">
+                    <img class="icon__poslygu" src="images/architecture.svg" alt="">
+                  <div class="text__poslygu-box">
+                    <h4 class="text__h4">Проектування</h4>
+                    <p class="text__poslygu">
+                    Ми пропонуємо індивідуальне проектування металовиробів та конструкцій будь-якої складності, що відповідають вашим вимогам.
+                  </p>
+                  </div>
+                  </div>
+                  <div class="swiper-slide slide__poslygu">
+                    <img class="icon__poslygu" src="images/welder.svg" alt="">
+                  <div class="text__poslygu-box">
+                    <h4 class="text__h4">Виробництво</h4>
+                    <p class="text__poslygu">
+                    Виготовляємо металовироби та конструкції за індивідуальними кресленнями. Любимо експерементувати та реалізовувати їх у життя.
+                  </p>
+                  </div>
+                  </div>
+                  <div class="swiper-slide slide__poslygu">
+                    <img class="icon__poslygu" src="images/welder2.svg" alt="">
+                  <div class="text__poslygu-box">
+                    <h4 class="text__h4">Монтажні роботи</h4>
+                    <p class="text__poslygu">
+                    Забезпечуємо монтаж виготовлених конструкцій на об'єкті замовника. Дотримуємося строків та гарантуємо якість виконаних робіт.
+                  </p>
+                  </div>
+                  </div>
+                  <div class="swiper-slide slide__poslygu">
+                    <img class="icon__poslygu" src="images/Spray.svg" alt="">
+                  <div class="text__poslygu-box">
+                    <h4 class="text__h4">Фарба та декор</h4>
+                    <p class="text__poslygu">
+                    Фарбування виконується у два шари: перший шар – ґрунт-емаль, другий – фарба. Додатково за бажанням замовника є можливість нанесення декоративної фарби.
+                  </p>
+                  </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
   </main>
+  <!--
   <footer class="footer">
     <div class="container">
       <div class="footer__box">
@@ -227,6 +315,8 @@
       </div>
     </div>
   </footer>
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

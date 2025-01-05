@@ -68,7 +68,7 @@ ul{
 
 
 
-.menu__list{
+.menu--list{
     display: flex;
     gap: 0 50px;
     
@@ -160,6 +160,8 @@ ul{
     display: inline-block;
     text-decoration: none;
     padding: 18px 0;
+    margin: 0 5px;
+    text-align: center;
   }
 
   .kategory__link::after {
@@ -394,7 +396,7 @@ ul{
     margin: 0 10px;
 }
 
-.box h3 {
+.box h3{
     margin: 0 0 10px; /* Відступ знизу */
     font-size: 20px; /* Розмір заголовка */
 }
@@ -436,7 +438,7 @@ ul{
 .info__header{
     display: flex;
     flex-direction: column;
-    width: 650px;
+    max-width: 650px;
     text-align: center;
     color: #FFDAB9;
 }
@@ -447,15 +449,16 @@ ul{
 .poslygu__box{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 100px 100px;
+    gap: 100px 0;
     justify-items: center;
-    margin: 100px 50px;
+    margin: 100px 0;
 }
 
 .poslygu__list{
     display: flex;
     gap: 0 20px;
     width: 490px;
+    margin: 0 50px;
     
 }
 .icon__poslygu{
@@ -621,80 +624,209 @@ ul{
 }
 
 
+.menu__btn{
+    display: none;
+}
+.kategory__menu-open{
+    display: none;
+}
+.swiper{
+    display: none;
+}
+.swiperv {
+    display: none;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 480px){
-    .header__titel{
-        font-size: 70px;
+@media (max-width: 1250px){
+    .poslygu__list{
+        margin: 0 20px;
     }
+
     .info__list-box{
-        gap: 0 10px;
         padding: 0;
     }
-    .container{
-    
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        box-shadow: 0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1100px){
+    .poslygu__box{
+        display: none;
     }
-    .info__text{
-       padding-bottom: 15px; 
-        padding-left: 0;
-        max-width: 710px;
-    }
-    
-    .info__text1{
+    .swiper-vertical{
+        display: block;
+        width: 100%;
+        height: 100%;
         
-        padding-bottom: 15px;
-        padding-right: 0;
-        max-width: 710px;
     }
-    .btn_kategory{
-        margin-left: 0px;
-    }
-    
-    
-    .btn__kontakty{
-        margin-right: 0px;
+    .wrapper-vertical{
+        max-height: 500px;
     }
 
-    .info__inner{
-        justify-content: center;
-    }
+}
 
+
+@media (max-width: 1000px){
     .header-content__text{
-        font-size: 48px;
+        font-size: 54px;
+    }
+    .header__titel{
+        font-size: 84px;
+    }
+    .header-content__text1{
+        font-size: 32px;
+    }
+    .logo{
+        margin: 0 40px;
+    }
+    
+    .info__list-box{
+        display: none;
+    }
+
+    .wrapper__info{
+        display: flex;
+    justify-content: space-between;
+    height: 250px;
+    }
+    .swiper{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+  
+      .slide__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        max-width: 290px;
+        color: #FFDAB9;
+      }
+      .swiper-pagination-bullet {
+        background: #F5F5DC; 
+    }
+      .swiper-pagination-bullet-active {
+        background: #F5F5DC;
+    }
+      .slide__info h3{
+        margin: 0 0 10px; /* Відступ знизу */
+        font-size: 20px; /* Розмір заголовка */
+    }
+    
+       .slide__info p {
+        margin: 0;
+        font-size: 16px; /* Розмір підзаголовка */
+        line-height: 1.2; /* Висота рядка */
+    }
+}
+
+@media (max-width: 840px){
+    .header-content__text{
+        font-size: 44px;
+    }
+    .header__titel{
+        font-size: 72px;
+    }
+    .header-content__text1{
+        font-size: 28px;
+    }
+    .menu__btn{
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        display: inline-block;
+        position: relative;
+        z-index: 2;
+    }
+    .menu__button{
+        height: 40px;
+    }
+    .menu--list{
+        display: flex;
+    }
+    .menu__list{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        top: -20px;
+    
+        padding: 80px 0px;
+        z-index: 1;
+        background-color: #263238e3;
+        transform: translateY(-120%);
+        transition: transform 0.5s ease;
+    }
+    .menu__link1{
+        display: none;
+    }
+
+    .menu__list.menu--open{
+        transform: translateY(0%);
+    }
+
+    .menu{
+        order: -1;
+        align-content: center;
+    }
+    .menu--list{
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px;
+        text-align: center;
+        
+    }
+    .menu__link{
+      padding: 5px 0;  
+    }
+    .menu__link::after {
+        bottom: 2px;
+    }    
+    .kategory__menu-open{
+        display: flex;
+        flex-direction: column;
+        order: -1;
+        margin: 0 20px;
+        color: #FFDAB9;
+        font-size: 16px;
+        gap: 10px 0;
+    }
+    .phone{
+        margin: 0 20px;
+    }
+    .logo{
+        margin: 0;
+    }
+    .kategory__link-open{
+        padding: 5px 0;
+    }
+    .kateg{
+        font-size: 20px;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+}
+
+
+@media (max-width: 560px){
+    .header-content__text{
+        font-size: 36px;
+    }
+    .header__titel{
+        font-size: 64px;
     }
     .header-content__text1{
         font-size: 24px;
     }
-    
-
-    .menu__list{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .footer__text{
-        font-size: 10px;
-    }
-
-    .box h3{
-        font-size: 14px;
-    }
-    .box p{
-        font-size: 10px;
-    }
- 
 }
+
+
+
+
+
+
+
+
+

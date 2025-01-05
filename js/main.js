@@ -1,3 +1,35 @@
+const menuBtn = document.querySelector(".menu__btn");
+const menuList = document.querySelector(".menu__list"); 
+
+menuBtn.addEventListener("click", () => {
+    menuList.classList.toggle("menu--open");
+})
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: 150,
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
+      clickable: true,
+    },
+  });
+
+  var swiper = new Swiper(".swiper-vertical", {
+    direction: "vertical",
+    slidesPerView: 2,
+    spaceBetween: 30,
+
+  });
+
+
+
+
+
+
+
+
 const galleryImages = document.querySelectorAll('.gallery img');
 const modals = document.querySelectorAll('.modal');
 const closeButtons = document.querySelectorAll('.close-btn');

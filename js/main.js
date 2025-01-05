@@ -16,12 +16,37 @@ var swiper = new Swiper(".mySwiper", {
     },
   });
 
-  var swiper = new Swiper(".swiper-vertical", {
-    direction: "vertical",
-    slidesPerView: 2,
-    spaceBetween: 30,
-
+// Ініціалізація Swiper
+var swiper = new Swiper(".swiper-vertical", {
+    direction: "vertical", // Вертикальна орієнтація
+    slidesPerView: 2, // Кількість видимих слайдів
+    spaceBetween: 30, // Відстань між слайдами
+    mousewheel: {
+      releaseOnEdges: true, // Передаємо контроль сторінці на краях
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
   });
+  
+  // Додаткове оброблення події коліщатка миші
+  const swiperContainer = document.querySelector('.swiper-vertical');
+  
+  swiperContainer.addEventListener('wheel', (event) => {
+    const atTop = swiper.isBeginning && event.deltaY < 0;
+    const atBottom = swiper.isEnd && event.deltaY > 0;
+  
+    if (atTop || atBottom) {
+      event.preventDefault(); // Забороняємо стандартну поведінку
+      swiper.mousewheel.disable(); // Відключаємо прокрутку Swiper
+      window.scrollBy(0, event.deltaY); // Прокручуємо сторінку
+      setTimeout(() => {
+        swiper.mousewheel.enable(); // Відновлюємо прокрутку Swiper
+      }, 100); // Коротка затримка для уникнення подвійного скролу
+    }
+  });
+
 
 
 

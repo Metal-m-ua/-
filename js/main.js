@@ -16,58 +16,45 @@ var swiper = new Swiper(".mySwiper", {
     },
   });
 
-// Ініціалізація Swiper
-var swiper = new Swiper(".swiper-vertical", {
-    direction: "vertical", // Вертикальна орієнтація
-    slidesPerView: 2, // Кількість видимих слайдів
-    spaceBetween: 30, // Відстань між слайдами
-    mousewheel: {
-      releaseOnEdges: true, // Дозволяємо скрол сторінці на краях
+  var swiper = new Swiper(".swiper-vertical", {
+    direction: "vertical",
+    slidesPerView: 2,
+    spaceBetween: 30,
+    mousewheel: true,
+    touchReleaseOnEdges: true, // Дозволяє прокрутку за межами Swiper на мобільних
+    on: {
+        reachBeginning: function () {
+            if (!isMobile()) {
+                swiper.mousewheel.disable();
+                window.scrollBy({ top: -100, behavior: 'smooth' });
+                setTimeout(() => swiper.mousewheel.enable(), 500);
+            }
+        },
+        reachEnd: function () {
+            if (!isMobile()) {
+                swiper.mousewheel.disable();
+                window.scrollBy({ top: 100, behavior: 'smooth' });
+                setTimeout(() => swiper.mousewheel.enable(), 500);
+            }
+        },
+        touchMove: function () {
+            if (swiper.isBeginning || swiper.isEnd) {
+                document.body.style.overflowY = "auto"; // Дозволяємо прокрутку сторінки
+            } else {
+                document.body.style.overflowY = "hidden"; // Забороняємо прокрутку сторінки
+            }
+        },
+        touchEnd: function () {
+            document.body.style.overflowY = "auto"; // Відновлюємо прокрутку
+        },
     },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
-  
-  // 🖱️ Обробка скролу для десктопів
-  const swiperContainer = document.querySelector('.swiper-vertical');
-  swiperContainer.addEventListener('wheel', (event) => {
-    const atTop = swiper.isBeginning && event.deltaY < 0;
-    const atBottom = swiper.isEnd && event.deltaY > 0;
-  
-    if (atTop || atBottom) {
-      event.preventDefault(); // Забороняємо стандартну поведінку
-      swiper.mousewheel.disable();
-      window.scrollBy(0, event.deltaY); // Прокручуємо сторінку
-      setTimeout(() => {
-        swiper.mousewheel.enable();
-      }, 100);
-    }
-  });
-  
-  // 📱 Обробка скролу для мобільних пристроїв
-  let touchStartY = 0;
-  
-  swiperContainer.addEventListener('touchstart', (event) => {
-    touchStartY = event.touches[0].clientY; // Запам'ятовуємо початкову точку дотику
-  });
-  
-  swiperContainer.addEventListener('touchmove', (event) => {
-    const touchEndY = event.touches[0].clientY;
-    const swipeDirection = touchStartY - touchEndY; // Визначаємо напрямок свайпу
-  
-    const atTop = swiper.isBeginning && swipeDirection < 0; // Свайп вгору на початку
-    const atBottom = swiper.isEnd && swipeDirection > 0; // Свайп вниз в кінці
-  
-    if (atTop || atBottom) {
-      swiper.allowTouchMove = false; // Відключаємо свайп Swiper
-      window.scrollBy(0, -swipeDirection); // Прокручуємо сторінку
-      setTimeout(() => {
-        swiper.allowTouchMove = true; // Вмикаємо свайп Swiper назад
-      }, 100);
-    }
-  });
+});
+
+// Функція для визначення мобільного пристрою
+function isMobile() {
+    return /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+}
+
 
 
 

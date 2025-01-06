@@ -45,6 +45,7 @@ ul{
 
 .header__inner{
     min-height: 100vh; 
+    padding-bottom: 50px;
 }
 
 .headertop{
@@ -409,6 +410,7 @@ ul{
 
 .info-inner{
     min-height: 100vh;
+    padding-bottom: 10px;
 }
 
 .info__inner{
@@ -863,12 +865,12 @@ ul{
 
 
 @media (max-width: 560px){
-    .info-inner{
-       padding-bottom: 10px;
+    .poslygu__list{
+        margin: 0;
+        gap: 0 10px;
     }
-    
     .icon__poslygu{
-        display: none;
+        width: 50px;
     }
 
     .header-content__text{

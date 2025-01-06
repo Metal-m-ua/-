@@ -408,7 +408,7 @@ ul{
 }
 
 .info-inner{
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .info__inner{
@@ -457,7 +457,7 @@ ul{
 .poslygu__list{
     display: flex;
     gap: 0 20px;
-    width: 490px;
+    max-width: 490px;
     margin: 0 50px;
     
 }
@@ -657,6 +657,7 @@ ul{
 @media (max-width: 1100px){
     .poslygu__box{
         display: flex;
+        align-items: center;
         flex-direction: column;
         gap: 40px 0;
         margin: 50px 0;
@@ -681,16 +682,13 @@ ul{
         font-size: 16px;
     }
 
-    .poslygu__list{
-        margin: 0;
-        width: 300px;
-    }
-
     .icon__poslygu{
-        height: 60px;
-        display: none;
+        height: 100px;
     }
     
+    .text__poslygu-box{
+        max-width: 310px;
+    }
 
     
     .footer-box{
@@ -756,6 +754,15 @@ ul{
 }
 
 @media (max-width: 840px){
+    .poslygu__list{
+        display: flex;
+        justify-content: center;
+    }
+    .poslygu__box{
+        display: flex;
+        align-items: center;
+    }
+    
     .headertop.scrolled{
         margin: 0;
     }
@@ -856,6 +863,17 @@ ul{
 
 
 @media (max-width: 560px){
+    .info-inner{
+       padding-bottom: 10px;
+    }
+
+    .bottom-background{
+        background-image: url(../images/infofmob.png); 
+    }
+    .icon__poslygu{
+        display: none;
+    }
+
     .header-content__text{
         font-size: 36px;
     }

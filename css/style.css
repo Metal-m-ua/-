@@ -734,7 +734,7 @@ ul{
         flex-direction: column;
         justify-content: center;
         justify-items: center;
-        max-width: 290px;
+        width: 290px;
         color: #FFDAB9;
       }
       .swiper-pagination-bullet {

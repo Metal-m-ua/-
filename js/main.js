@@ -5,6 +5,14 @@ menuBtn.addEventListener("click", () => {
     menuList.classList.toggle("menu--open");
 })
 
+
+const menuBtnk = document.querySelector(".menu-item1");
+
+menuBtnk.addEventListener("click", () => {
+    menuList.classList.toggle("menu--open");
+})
+
+
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: "auto",
       centeredSlides: true,
@@ -15,7 +23,6 @@ var swiper = new Swiper(".mySwiper", {
       clickable: true,
     },
   });
-
 
 
 
@@ -181,7 +188,8 @@ function toggleModal() {
     }
   });
   
+
   function toggleModalk() {
-    const modalk = document.getElementById('modalk');
-    modalk.style.display = (modalk.style.display === 'none' || modalk.style.display === '') ? 'block' : 'none';
+    const modal = document.getElementById('modalk');
+    modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';
   }

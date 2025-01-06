@@ -16,12 +16,6 @@ var swiper = new Swiper(".mySwiper", {
     },
   });
 
-  var swiper = new Swiper(".swiper-vertical", {
-    direction: "vertical",
-    slidesPerView: 2,
-    spaceBetween: 30,
-    mousewheel: true,
-  });
 
 
 

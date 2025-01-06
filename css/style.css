@@ -866,10 +866,7 @@ ul{
     .info-inner{
        padding-bottom: 10px;
     }
-
-    .bottom-background{
-        background-image: url(../images/infofmob.png); 
-    }
+    
     .icon__poslygu{
         display: none;
     }

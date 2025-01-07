@@ -852,6 +852,11 @@ ul{
 
 
 @media (max-width: 560px){
+
+    .container{
+        padding: 0 10px;
+    }
+
     .poslygu__list{
         margin: 0;
         gap: 0 10px;

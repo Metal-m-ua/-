@@ -23,12 +23,16 @@
                   <img class="logo__img" src="images/logo.svg" alt="логотип м">
                 </a>
                 <nav class="menu">
+                  <button class="menu__btn">
+                    <svg class="menu__button" width="64px" height="64px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" transform="rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#906464" stroke-width="0.624"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#FFDAB9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                  </button>
                   <ul class="menu__list">
-                    <li class="menu__item">
+                    <div class="menu--list">
+                      <li class="menu__item">
                       <a class="menu__link" href="index.html#header">Головна</a>
                     </li>
-                    <li class="menu__item">
-                      <a class="menu__link menu__link1"  onclick="toggleModalk()">Категорії</a></li>
+                    <li class="menu__item menu-item0">
+                      <a class="menu__link"  onclick="toggleModalk()">Категорії</a></li>
                     </li>
                     <li class="menu__item">
                       <a class="menu__link" href="index.html#kontakty">Контакти</a>
@@ -36,6 +40,31 @@
                     <li class="menu__item">
                       <a class="menu__link" href="index.html#main">Про нас</a>
                     </li>
+                    </div>
+                    <ul class="kategory__menu-open">
+                      <p class="kateg">Категорії</p>
+                      <li class="kategory__item-open">
+                        <a class="kategory__link-open" href="sadovi  lavochku.html">Садові лавочки та столи</a>
+                      </li>
+                      <li class="kategory__item-open">
+                        <a class="kategory__link-open" href="#">Ворота та хвіртки</a>
+                      </li>
+                      <li class="kategory__item-open">
+                        <a class="kategory__link-open" href="#">Дашки та навіси</a>
+                      </li>
+                      <li class="kategory__item-open">
+                        <a class="kategory__link-open" href="#">Сходи та перила</a>
+                      </li>
+                      <li class="kategory__item-open">
+                        <a class="kategory__link-open" href="#">Підвазонники</a>
+                      </li>
+                      <li class="kategory__item-open">
+                        <a class="kategory__link-open" href="#">Конструкції</a>
+                      </li>
+                      <li class="kategory__item-open">
+                        <a class="kategory__link-open" href="#">Інші вироби</a>
+                      </li>
+                    </ul>
                   </ul>
                 </nav>
                 <div class="phone">
@@ -137,21 +166,29 @@
           <a class="logo__footer">
             <p>METAL</p>
           </a>
+          <div class="adreas__box adreas-mob">
+            <a href="https://www.google.com.ua/maps/@50.4916861,25.9563229,17z?hl=uk&authuser=1&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">
+              <img class="loc__img" src="images/location-dot-solid 1.svg" alt="">
+            <p class="adreas">Рівне. Дубенський р-н.<br>с.Крилів</p>
+            </a>
+          </div>
         </div>
         <div class="orange-line"></div>
         <div class="footer-box">
           <ul class="footer__menu">
             <li class="footer__menu-item">
-              <a class="footer__menu-link" href="index.html#header">Головна</a>
+              <a class="footer__menu-link" href="index.html/#header">Головна</a>
             </li>
-            <li class="footer__menu-item">
-              <a class="footer__menu-link" href="sadovi  lavochku.html#header" onclick="toggleModalk()">Категорії</a>
+            <li class="footer__menu-item menu-item1">
+              <a class="footer__menu-link" href="#header">Категорії</a>
+            <li class="footer__menu-item menu-item2">
+              <a class="footer__menu-link" onclick="toggleModalk()">Категорії</a>
             </li>
             <li class="footer__menu-item">
               <a class="footer__menu-link" href="#kontakty">Контакти</a>
             </li>
             <li class="footer__menu-item">
-              <a class="footer__menu-link" href="index.html#main">Про нас</a>
+              <a class="footer__menu-link" href="index.html/#main">Про нас</a>
             </li>
           </ul>
           <div class="adreas__box">
@@ -159,7 +196,6 @@
               <img class="loc__img" src="images/location-dot-solid 1.svg" alt="">
             <p class="adreas">Рівне. Дубенський р-н. с.Крилів</p>
             </a>
-            <p class="Copyright">© 2025</p>
           </div>
           <div id="kontakty" class="kontakty__box">
             <div class="phone__footer">
@@ -188,6 +224,10 @@
             </ul>
           </div>
         </div>
+        <div class="Copyright">
+          <p>© 2025</p>
+        </div>
+        
       </div>
     </footer>
   

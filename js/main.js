@@ -13,19 +13,21 @@ menuBtnk.addEventListener("click", () => {
 })
 
 
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: "auto",
-      centeredSlides: true,
-      spaceBetween: 150,
-    pagination: {
-      el: ".swiper-pagination",
-      dynamicBullets: true,
-      clickable: true,
-    },
-  });
-
-
-
+  
+  const swiperContainer = document.querySelector('.mySwiper');
+  if (swiperContainer) {
+      // Код для Swiper.js
+      var swiper = new Swiper(".mySwiper", {
+          slidesPerView: "auto",
+          centeredSlides: true,
+          spaceBetween: 150,
+          pagination: {
+              el: ".swiper-pagination",
+              dynamicBullets: true,
+              clickable: true,
+          },
+      });
+  }
 
 
 
@@ -188,7 +190,7 @@ function toggleModal() {
     }
   });
   
-
+// Функція для відкриття/закриття модального вікна "на сторінках Категорії"
   function toggleModalk() {
     const modal = document.getElementById('modalk');
     modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';

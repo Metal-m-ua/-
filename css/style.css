@@ -86,9 +86,7 @@ ul{
     
 }
 
-.menu-item0, .menu-item2, .menu-item1{
-    cursor: pointer;
-}
+
 
 .menu__link::after {
     content: '';
@@ -633,7 +631,9 @@ ul{
 .menu__btn, .kategory__menu-open, .swiper, .adreas-mob, .menu-item1{
     display: none;
 }
-
+.menu-item0, .menu-item2, .menu-item1{
+    cursor: pointer;
+}
 
 
 @media (max-width: 1250px){
@@ -778,9 +778,7 @@ ul{
     .menu__button{
         height: 40px;
     }
-    .menu--list{
-        display: flex;
-    }
+
     .menu__list{
         display: flex;
         justify-content: space-between;
@@ -796,7 +794,7 @@ ul{
         transform: translateY(-120%);
         transition: transform 0.5s ease;
     }
-    .menu__link1, .menu-item2{
+    .menu-item0, .menu-item2{
         display: none;
     }
 

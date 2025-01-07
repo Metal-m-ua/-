@@ -201,9 +201,13 @@ ul{
 .header-content{
     padding-top: 100px;
     text-align: center;
-    display: flex;
     justify-content: center;
     
+}
+
+.gallery__box{
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -216,7 +220,6 @@ ul{
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(4, 1fr);
-    max-width: 1300px;
 }
 
 .modal {
@@ -272,8 +275,8 @@ body.modal-open {
 }
 
 .Photo__width{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     transition: transform 0.5s ease; /* Плавний ефект */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
 }
@@ -452,7 +455,38 @@ body.modal-open {
     cursor: pointer;
 }
 
+
+.close-btn {
+    top: 10px;
+    right: 5px;
+}
+.prev-btn {
+    left: 5px;
+}
+.next-btn {
+    right: 5px;
+}
+.close-btn, .prev-btn, .next-btn{
+    font-size: 3em;
+}
+
+
+
 @media (max-width: 1250px){
+    .header__titel{
+        font-size: 40px;
+    }
+    .header__text{
+        font-size: 22px;
+    }
+    .gallery{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .Photo__width{
+        width: 200px;
+        height: 200px;
+     
+    }
     .footer-box{
         margin: 25px 200px;
     }
@@ -466,6 +500,9 @@ body.modal-open {
 }
 
 @media (max-width: 1000px){
+    .gallery{
+        grid-template-columns: repeat(2, 1fr);
+    }
     .logo{
         margin: 0 40px;
     }
@@ -475,6 +512,26 @@ body.modal-open {
 }
 
 @media (max-width: 840px){
+
+    .modal img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .close-btn {
+        top: 10px;
+        right: 5px;
+    }
+    .prev-btn {
+        left: 5px;
+    }
+    .next-btn {
+        right: 5px;
+    }
+    .close-btn, .prev-btn, .next-btn{
+        font-size: 3em;
+    }
+    
+
     .menu-item1{
         display: block;
     }
@@ -563,7 +620,25 @@ body.modal-open {
 }
 
 @media (max-width: 560px){
+    
+    .header__titel{
+        font-size: 36px;
+        padding-top: 30px;
+    }
 
+    .header__text{
+        font-size: 20px;
+        padding-bottom: 50px;
+    }
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .Photo__width{
+        width: 150px;
+        height: 150px;
+     
+    }
     .container{
         padding: 0 10px;
     }
@@ -612,41 +687,3 @@ body.modal-open {
 
 
 
-
-
-
-
-
-
-
-@media (max-width: 480px){
-.gallery{
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 410px;
-}
-.Photo__width{
-    width: 150px;
-    height: 150px;
- 
-}
-.modal img {
-    max-width: 100%;
-    max-height: 100%;
-}
-.close-btn {
-    top: 10px;
-    right: 5px;
-}
-.prev-btn {
-    left: 5px;
-}
-.next-btn {
-    right: 5px;
-}
-.close-btn, .prev-btn, .next-btn{
-    font-size: 3em;
-}
-
-}

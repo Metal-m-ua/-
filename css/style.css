@@ -746,6 +746,9 @@ ul{
         font-size: 16px; /* Розмір підзаголовка */
         line-height: 1.2; /* Висота рядка */
     }
+    .menu--list{
+        gap: 0 30px;
+    }
 }
 
 @media (max-width: 840px){
@@ -901,7 +904,7 @@ ul{
     }
 
     .footer{
-        height: 384.48px;
+        height: 383.48px;
     }
 
 }

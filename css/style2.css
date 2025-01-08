@@ -27,7 +27,7 @@ ul{
     box-shadow: 0 10px 100px rgba(0, 0, 0, 0.5);
 }
 .header__inner{
-    min-height: 100vh;
+    min-height: 100vh;padding-bottom: 20px;
 }
 
 .header{
@@ -98,6 +98,7 @@ ul{
     padding: 18px 0;
     margin: 0 5px;
     text-align: center;
+    text-transform: uppercase;
   }
 
   .kategory__link::after {
@@ -215,6 +216,9 @@ ul{
 
 
 
+.btn-none{
+    display: none;
+}
 
 .gallery{
     display: grid;

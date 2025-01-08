@@ -163,6 +163,7 @@ ul{
     padding: 18px 0;
     margin: 0 5px;
     text-align: center;
+    text-transform: uppercase;
   }
 
   .kategory__link::after {
@@ -250,8 +251,9 @@ ul{
 }
 
 .header-content__text{
+    
     padding-top:  120px;
-    font-size: 64px;
+    font-size: 40px;
     color: #F5F5DC;
     text-shadow: 
     -1px -1px 0 black,
@@ -292,7 +294,7 @@ ul{
 
 .header-content__text1{
     padding-top: 25px;
-    font-size: 36px;
+    font-size: 32px;
     max-width: 750px;
     margin: 0 auto;
     color: #F5F5DC;
@@ -306,7 +308,7 @@ ul{
 }
 
 .header__titel{
-    padding-top: 25px;
+    padding-top: 35px;
     font-size: 96px;
     color: hsl(0, 0%, 90%);
     font-family: "Aclonica", serif;
@@ -695,7 +697,7 @@ ul{
 
 @media (max-width: 1000px){
     .header-content__text{
-        font-size: 54px;
+        font-size: 36px;
     }
     .header__titel{
         font-size: 84px;
@@ -759,13 +761,13 @@ ul{
         margin: 0;
     }
     .header-content__text{
-        font-size: 44px;
+        font-size: 30px;
     }
     .header__titel{
         font-size: 72px;
     }
     .header-content__text1{
-        font-size: 28px;
+        font-size: 26px;
     }
     .menu__btn{
         border: none;
@@ -867,7 +869,7 @@ ul{
     }
 
     .header-content__text{
-        font-size: 36px;
+        font-size: 24px;
     }
     .header__titel{
         font-size: 64px;

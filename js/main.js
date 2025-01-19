@@ -195,3 +195,35 @@ function toggleModal() {
     const modal = document.getElementById('modalk');
     modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';
   }
+
+
+
+
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Додаємо обробник для всіх посилань
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', (event) => {
+            // Перевіряємо, чи посилання веде на іншу сторінку
+            if (link.href && link.target !== '_blank' && !link.href.includes('#')) {
+                event.preventDefault();
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 500); // Час повинен відповідати CSS-тривалості переходу
+            }
+        });
+    });
+});
+
+
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  preloader.classList.add('hidden'); // Додаємо клас для приховування
+  etTimeout(() => {
+    preloader.style.display = 'none';
+  }, 800); // Час у мілісекундах відповідає transition у CSS
+});

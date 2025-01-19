@@ -203,27 +203,40 @@ function toggleModal() {
 
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Додаємо обробник для всіх посилань
+    // Мінімальний час показу прелоадера (в мілісекундах)
+    const minPreloaderTime = 1000; // 2 секунди
+    const startTime = new Date().getTime();
+
+    // Обробка посилань із плавним переходом
     const links = document.querySelectorAll('a');
     links.forEach(link => {
         link.addEventListener('click', (event) => {
-            // Перевіряємо, чи посилання веде на іншу сторінку
             if (link.href && link.target !== '_blank' && !link.href.includes('#')) {
                 event.preventDefault();
                 document.body.classList.add('fade-out');
                 setTimeout(() => {
                     window.location.href = link.href;
-                }, 500); // Час повинен відповідати CSS-тривалості переходу
+                }, 500); // Час fade-out повинен відповідати CSS-тривалості
             }
         });
     });
-});
 
+    // Подія завершення завантаження сторінки
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        const endTime = new Date().getTime();
+        const elapsedTime = endTime - startTime;
 
-window.addEventListener('load', () => {
-  const preloader = document.getElementById('preloader');
-  preloader.classList.add('hidden'); // Додаємо клас для приховування
-  setTimeout(() => {
-    preloader.style.display = 'none';
-  }, 800); // Час у мілісекундах відповідає transition у CSS
+        const remainingTime = Math.max(0, minPreloaderTime - elapsedTime);
+
+        // Мінімальний час очікування
+        setTimeout(() => {
+            preloader.classList.add('hidden'); // Плавне зникнення прелоадера
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                document.getElementById('content').style.display = 'block'; // Показуємо контент
+                document.body.style.overflow = 'auto'; // Дозволяємо прокручування сторінки
+            }, 800); // Час, що відповідає transition у CSS
+        }, remainingTime);
+    });
 });

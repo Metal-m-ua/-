@@ -14,6 +14,58 @@ html, body {
     height: 100%;
     background-color: #263238;
     scroll-behavior: smooth;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  body.fade-out {
+    opacity: 0;
+}
+
+/* Прелоадер */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #263238;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    opacity: 1; /* Початкова прозорість */
+    visibility: visible; /* Початкова видимість */
+    transition: opacity 0.8s ease-out, visibility 0.8s ease-out; /* Додаємо анімацію */
+    overflow: hidden; /* Запобігає зайвим прокруткам */
+  }
+  /* Клас для активації прелоадера */
+#preloader.show {
+    opacity: 1; /* Повністю видимий */
+    visibility: visible; /* Зробити видимим */
+  }
+  
+  /* Коли прелоадер прихований */
+  #preloader.hidden {
+    opacity: 0; /* Прозорість */
+    visibility: hidden; /* Приховуємо після завершення анімації */
+  }
+  
+  /* Текст анімації */
+  .loader p {
+    color: #FFDAB9; /* Білий текст */
+    font-size: 48px;
+    font-family: 'Aclonica', sans-serif;
+    animation: blink 1.5s infinite; /* Анімація */
+  }
+  
+  /* Анімація блимаючого тексту */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
   }
 
 .body{

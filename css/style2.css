@@ -1,7 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
 a{
     text-decoration: none;
     color: inherit;
@@ -17,11 +13,10 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: #263238;
-  }
-
-body {
+    scroll-behavior: smooth;
     transition: opacity 0.5s ease-in-out;
 }
+
 
 body.fade-out {
     opacity: 0;
@@ -42,6 +37,11 @@ body.fade-out {
     opacity: 1; /* Початкова прозорість */
     visibility: visible; /* Початкова видимість */
     transition: opacity 0.8s ease-out, visibility 0.8s ease-out; /* Додаємо анімацію */
+  }
+  /* Клас для активації прелоадера */
+#preloader.show {
+    opacity: 1; /* Повністю видимий */
+    visibility: visible; /* Зробити видимим */
   }
   
   /* Коли прелоадер прихований */
@@ -68,14 +68,6 @@ body.fade-out {
     }
   }
   
-  /* Приховуємо прелоадер після завантаження */
-  .hidden {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease-out;
-  }
-  
-
 .body{
     font-size: 16px;
     font-weight: 400;

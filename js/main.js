@@ -223,7 +223,7 @@ function toggleModal() {
 window.addEventListener('load', () => {
   const preloader = document.getElementById('preloader');
   preloader.classList.add('hidden'); // Додаємо клас для приховування
-  etTimeout(() => {
+  setTimeout(() => {
     preloader.style.display = 'none';
   }, 800); // Час у мілісекундах відповідає transition у CSS
 });

@@ -1,16 +1,26 @@
 const menuBtn = document.querySelector(".menu__btn");
-const menuList = document.querySelector(".menu__list"); 
+const menuList = document.querySelector(".menu__list");
+const menuLinks = document.querySelectorAll(".menu__list a"); // Отримуємо всі посилання в меню
 
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener("click", (event) => {
     menuList.classList.toggle("menu--open");
-})
+    event.stopPropagation(); // Запобігаємо спливу події
+});
+
+document.addEventListener("click", (event) => {
+    if (!menuList.contains(event.target) && !menuBtn.contains(event.target)) {
+        menuList.classList.remove("menu--open");
+    }
+});
+
+// Додаємо обробник подій для кожного посилання
+menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        menuList.classList.remove("menu--open"); // Закриваємо меню
+    });
+});
 
 
-const menuBtnk = document.querySelector(".menu-item1");
-
-menuBtnk.addEventListener("click", () => {
-    menuList.classList.toggle("menu--open");
-})
 
 
   
@@ -207,19 +217,7 @@ function toggleModal() {
     const minPreloaderTime = 1000; // 2 секунди
     const startTime = new Date().getTime();
 
-    // Обробка посилань із плавним переходом
-    const links = document.querySelectorAll('a');
-    links.forEach(link => {
-        link.addEventListener('click', (event) => {
-            if (link.href && link.target !== '_blank' && !link.href.includes('#')) {
-                event.preventDefault();
-                document.body.classList.add('fade-out');
-                setTimeout(() => {
-                    window.location.href = link.href;
-                }, 500); // Час fade-out повинен відповідати CSS-тривалості
-            }
-        });
-    });
+   
 
     // Подія завершення завантаження сторінки
     window.addEventListener('load', () => {

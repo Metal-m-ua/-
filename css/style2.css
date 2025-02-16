@@ -226,6 +226,7 @@ body.fade-out {
   
 .logo__img{
     transition: transform 0.5s ease; /* Плавний ефект */
+    height: 50px;
 }
 
 .logo:hover .logo__img {
@@ -397,10 +398,10 @@ body.modal-open {
     color: hsl(0, 0%, 90%);
     font-family: "Aclonica", serif;
     text-shadow: 
-    -3px -3px 0 black,
+    -1px -1px 0 black,
     1px -1px 0 black,
     -1px 1px 0 black,
-    1px 1px 0 black;  
+    3px 3px 0 black; 
 }
 
 .orange-line{

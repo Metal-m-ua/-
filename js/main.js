@@ -44,137 +44,174 @@ menuLinks.forEach(link => {
 
 
 
-const galleryImages = document.querySelectorAll('.gallery img');
-const modals = document.querySelectorAll('.modal');
-const closeButtons = document.querySelectorAll('.close-btn');
-const prevButtons = document.querySelectorAll('.prev-btn');
-const nextButtons = document.querySelectorAll('.next-btn');
+  const galleryImages = document.querySelectorAll('.gallery img');
+  const modals = document.querySelectorAll('.modal');
+  const closeButtons = document.querySelectorAll('.close-btn');
+  const prevButtons = document.querySelectorAll('.prev-btn');
+  const nextButtons = document.querySelectorAll('.next-btn');
+  
+  let currentMediaIndex = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let scale = 1;
+  let modalMedia = null;
+  
+  // 🎯 Відкрити модальне вікно
+  galleryImages.forEach((img, index) => {
+      img.addEventListener('click', () => {
+          modals[index].style.display = 'flex';
+          document.body.classList.add('modal-open');
+          currentMediaIndex = 0;
+          showMedia(modals[index], currentMediaIndex);
+      });
+  });
+  
+  // 🎯 Закрити модальне вікно при кліку на кнопку закриття
+  closeButtons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+          closeModal(modals[index]);
+      });
+  });
+  
+  // 🎯 Закрити модальне вікно при кліку на порожню область
+  modals.forEach((modal) => {
+      modal.addEventListener('click', (event) => {
+          if (event.target === modal) {
+              closeModal(modal);
+          }
+      });
+  });
+  
+  // 🎯 Закрити модальне вікно
+  function closeModal(modal) {
+      modal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+      resetMedia(modal);
+  }
+  
+  // 🎯 Показати зображення або відео
+  function showMedia(modal, index) {
+      const mediaElements = modal.querySelectorAll('img, video');
+      mediaElements.forEach((media, i) => {
+          media.classList.toggle('hidden', i !== index);
+          if (media.tagName === 'VIDEO') {
+              if (i === index) {
+                  media.play(); // Запуск відео при відкритті
+              } else {
+                  media.pause();
+                  media.currentTime = 0;
+              }
+          }
+      });
+  
+      modalMedia = modal.querySelector('img:not(.hidden), video:not(.hidden)');
+      resetZoom();
+  }
+  
+  // 🎯 Наступне зображення або відео
+  nextButtons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+          const mediaElements = modals[index].querySelectorAll('img, video');
+          currentMediaIndex = (currentMediaIndex + 1) % mediaElements.length;
+          showMedia(modals[index], currentMediaIndex);
+      });
+  });
+  
+  // 🎯 Попереднє зображення або відео
+  prevButtons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+          const mediaElements = modals[index].querySelectorAll('img, video');
+          currentMediaIndex = (currentMediaIndex - 1 + mediaElements.length) % mediaElements.length;
+          showMedia(modals[index], currentMediaIndex);
+      });
+  });
+  
+  // 📲 🎯 Swipe події для сенсорних пристроїв
+  modals.forEach((modal, index) => {
+      modal.addEventListener('touchstart', (e) => {
+          if (e.touches.length === 1) {
+              touchStartX = e.touches[0].clientX;
+          }
+      });
+  
+      modal.addEventListener('touchend', (e) => {
+          if (e.changedTouches.length === 1) {
+              touchEndX = e.changedTouches[0].clientX;
+              handleSwipe(modal, index);
+          }
+      });
+  });
+  
+  // 🎯 Обробка свайпу
+  function handleSwipe(modal, index) {
+      const SWIPE_THRESHOLD = 100;
+  
+      if (touchStartX - touchEndX > SWIPE_THRESHOLD) {
+          const mediaElements = modal.querySelectorAll('img, video');
+          currentMediaIndex = (currentMediaIndex + 1) % mediaElements.length;
+          showMedia(modal, currentMediaIndex);
+      } else if (touchEndX - touchStartX > SWIPE_THRESHOLD) {
+          const mediaElements = modal.querySelectorAll('img, video');
+          currentMediaIndex = (currentMediaIndex - 1 + mediaElements.length) % mediaElements.length;
+          showMedia(modal, currentMediaIndex);
+      }
+  }
+  
+  // 🎯 Зум за допомогою колеса миші
+  modals.forEach((modal) => {
+      modal.addEventListener('wheel', (e) => {
+          e.preventDefault();
+          scale += e.deltaY * -0.001;
+          scale = Math.min(Math.max(1, scale), 3);
+          setZoom(scale);
+      });
+  });
+  
+  // 🎯 Встановлення масштабу
+  function setZoom(zoomLevel) {
+      if (modalMedia && modalMedia.tagName === 'IMG') {
+          modalMedia.style.transform = `scale(${zoomLevel})`;
+      }
+  }
+  
+  // 🎯 Скидання масштабу
+  function resetZoom() {
+      scale = 1;
+      if (modalMedia && modalMedia.tagName === 'IMG') {
+          modalMedia.style.transform = 'scale(1)';
+      }
+  }
+  
+  // 🎯 Скидання стану медіа при закритті модального вікна
+  function resetMedia(modal) {
+      const mediaElements = modal.querySelectorAll('video');
+      mediaElements.forEach((video) => {
+          video.pause();
+          video.currentTime = 0;
+      });
+  }
+  function showMedia(modal, index) {
+    const mediaElements = modal.querySelectorAll('img, video');
 
-let currentImageIndex = 0;
-let touchStartX = 0;
-let touchEndX = 0;
-let initialDistance = null;
-let scale = 1;
-let modalImage = null;
-
-// 🎯 Відкрити модальне вікно
-galleryImages.forEach((img, index) => {
-    img.addEventListener('click', () => {
-        modals[index].style.display = 'flex';
-        document.body.classList.add('modal-open');
-        currentImageIndex = 0;
-        showImage(modals[index], currentImageIndex);
-        modalImage = modals[index].querySelector('img');
-    });
-});
-
-// 🎯 Закрити модальне вікно при кліку на кнопку закриття
-closeButtons.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        closeModal(modals[index]);
-    });
-});
-
-// 🎯 Закрити модальне вікно при кліку на порожню область
-modals.forEach((modal) => {
-    modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            closeModal(modal);
+    // Ховаємо всі елементи перед показом нового
+    mediaElements.forEach((media) => {
+        media.style.display = 'none'; // Замість класу hidden, бо можливо він не працює
+        if (media.tagName === 'VIDEO') {
+            media.pause();
+            media.currentTime = 0; // Скидаємо відео
         }
     });
-});
 
-// 🎯 Закрити модальне вікно
-function closeModal(modal) {
-    modal.style.display = 'none';
-    document.body.classList.remove('modal-open');
+    // Показуємо тільки потрібний медіа-елемент
+    const activeMedia = mediaElements[index];
+    activeMedia.style.display = 'block';
+
+    if (activeMedia.tagName === 'VIDEO') {
+        activeMedia.play(); // Автовідтворення відео
+    }
+
+    modalMedia = activeMedia;
     resetZoom();
-}
-
-// 🎯 Показати зображення в модальному вікні
-function showImage(modal, index) {
-    const images = modal.querySelectorAll('img');
-    images.forEach((img, i) => {
-        img.classList.toggle('hidden', i !== index);
-    });
-    modalImage = modal.querySelector('img:not(.hidden)');
-    resetZoom();
-}
-
-// 🎯 Наступне зображення
-nextButtons.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        const images = modals[index].querySelectorAll('img');
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        showImage(modals[index], currentImageIndex);
-    });
-});
-
-// 🎯 Попереднє зображення
-prevButtons.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        const images = modals[index].querySelectorAll('img');
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        showImage(modals[index], currentImageIndex);
-    });
-});
-
-// 📲 🎯 Swipe події для сенсорних пристроїв
-modals.forEach((modal, index) => {
-    modal.addEventListener('touchstart', (e) => {
-        if (e.touches.length === 1) {
-            touchStartX = e.touches[0].clientX;
-        }
-    });
-
-    modal.addEventListener('touchend', (e) => {
-        if (e.changedTouches.length === 1) {
-            touchEndX = e.changedTouches[0].clientX;
-            handleSwipe(modal, index);
-        }
-    });
-});
-
-// 🎯 Обробка свайпу
-function handleSwipe(modal, index) {
-    const SWIPE_THRESHOLD = 100; // Мінімальна відстань для свайпу
-
-    if (touchStartX - touchEndX > SWIPE_THRESHOLD) {
-        // Свайп вліво (наступне зображення)
-        const images = modal.querySelectorAll('img');
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        showImage(modal, currentImageIndex);
-    } else if (touchEndX - touchStartX > SWIPE_THRESHOLD) {
-        // Свайп вправо (попереднє зображення)
-        const images = modal.querySelectorAll('img');
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        showImage(modal, currentImageIndex);
-    }
-}
-
-// 🎯 Зум за допомогою колеса миші
-modals.forEach((modal) => {
-    modal.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        scale += e.deltaY * -0.001;
-        scale = Math.min(Math.max(1, scale), 3); // Обмеження масштабу від 1 до 3
-        setZoom(scale);
-    });
-});
-
-// 🎯 Встановлення масштабу
-function setZoom(zoomLevel) {
-    if (modalImage) {
-        modalImage.style.transform = `scale(${zoomLevel})`;
-    }
-}
-
-// 🎯 Скидання масштабу
-function resetZoom() {
-    scale = 1;
-    if (modalImage) {
-        modalImage.style.transform = 'scale(1)';
-    }
 }
 
 

@@ -372,6 +372,11 @@ body.modal-open {
 }
 
 
+/* Стилі для відео */
+video {
+    max-width: 90%;
+    max-height: 90%;
+}
 
 
 
@@ -578,6 +583,11 @@ body.modal-open {
 
 @media (max-width: 840px){
 
+    video {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
     .modal img {
         max-width: 100%;
         max-height: 100%;

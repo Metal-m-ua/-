@@ -1,6 +1,7 @@
 const menuBtn = document.querySelector(".menu__btn");
 const menuList = document.querySelector(".menu__list");
 const menuLinks = document.querySelectorAll(".menu__list a"); // Отримуємо всі посилання в меню
+const menuBtnk = document.querySelector(".menu-item1"); // Доданий елемент
 
 menuBtn.addEventListener("click", (event) => {
     menuList.classList.toggle("menu--open");
@@ -8,7 +9,7 @@ menuBtn.addEventListener("click", (event) => {
 });
 
 document.addEventListener("click", (event) => {
-    if (!menuList.contains(event.target) && !menuBtn.contains(event.target)) {
+    if (!menuList.contains(event.target) && !menuBtn.contains(event.target) && !menuBtnk.contains(event.target)) {
         menuList.classList.remove("menu--open");
     }
 });
@@ -20,7 +21,24 @@ menuLinks.forEach(link => {
     });
 });
 
+// Додаємо обробник подій для додаткового елемента
+if (menuBtnk) {
+    menuBtnk.addEventListener("click", (event) => {
+        menuList.classList.toggle("menu--open");
+        event.stopPropagation();
+    });
+}
 
+// Закриваємо меню при прокручуванні сторінки вниз
+let lastScrollTop = 0;
+
+window.addEventListener("scroll", () => {
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        menuList.classList.remove("menu--open");
+    }
+    lastScrollTop = scrollTop;
+});
 
 
   
@@ -39,7 +57,25 @@ menuLinks.forEach(link => {
       });
   }
 
+ 
 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Отримуємо хеш із URL
+    const hash = window.location.hash;
+
+    if (hash.startsWith("#modal-")) {
+        setTimeout(() => {
+            const modalId = hash.substring(1); // Видаляємо "#"
+            const modal = document.getElementById(modalId);
+
+            if (modal) {
+                modal.style.display = "flex"; // Відкриваємо модальне вікно
+            }
+        }, 100); // Затримка 100 мс для коректного застосування стилів
+    }
+});
 
 
 
@@ -220,22 +256,28 @@ menuLinks.forEach(link => {
 function toggleModal() {
     const modal = document.getElementById('modal');
     modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';
-  }
-  
-  // Відстеження прокрутки для анімації прозорості
-  window.addEventListener('scroll', () => {
+}
+
+// Відстеження прокрутки для анімації прозорості та закриття модального вікна
+window.addEventListener('scroll', () => {
     const headertop = document.querySelector('.headertop');
     const modal = document.getElementById('modal');
-    
+
     // Перевіряємо, наскільки сторінка прокручена
     if (window.scrollY > 50) {
         headertop.classList.add('scrolled');
-      modal.classList.add('scrolled');
+        modal.classList.add('scrolled');
     } else {
         headertop.classList.remove('scrolled');
-      modal.classList.remove('scrolled');
+        modal.classList.remove('scrolled');
     }
-  });
+
+    // Закриття модального вікна при невеликій прокрутці (наприклад, 20px)
+    if (window.scrollY > 50) {
+        modal.style.display = 'none';
+    }
+});
+
   
 // Функція для відкриття/закриття модального вікна "на сторінках Категорії"
   function toggleModalk() {

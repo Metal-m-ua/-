@@ -56,8 +56,35 @@ window.addEventListener("scroll", () => {
           },
       });
   }
+  document.addEventListener("DOMContentLoaded", function () {
+    const slidesContainer = document.querySelector(".slides");
+    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slides.length;
+    let index = 0;
 
- 
+    function nextSlide() {
+      let visibleSlides = window.innerWidth <= 768 ? 1 : 3;
+      if (index < totalSlides - visibleSlides) {
+        index++;
+      } else {
+        index = 0;
+      }
+      updateSlider();
+    }
+
+    function updateSlider() {
+      let slideWidth = slides[0].offsetWidth;
+      slidesContainer.style.transition = "transform 0.5s ease-in-out";
+      slidesContainer.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+    setInterval(nextSlide, 3000);
+
+    window.addEventListener("resize", updateSlider);
+  });
+
+
+
 
 
 

@@ -15,6 +15,7 @@ html, body {
     background-color: #263238;
     scroll-behavior: smooth;
     transition: opacity 0.5s ease-in-out;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 body.fade-out {
@@ -161,6 +162,43 @@ body.fade-out {
     opacity: 1; /* Лінія стає видимою */
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+    margin-left: 70px;
+    margin-right: 63px;   
+}
+
+.logo__img{
+    transition: transform 0.5s ease; /* Плавний ефект */
+    height: 40px;
+}
+
+.logo:hover .logo__img{
+    transform: scale(1.2); /* Збільшення */
+}
+
+.phone:hover .imgPhone{
+    transform: scale(1.2);
+}
+.phone{
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    margin-right: 50px;
+}
+.imgPhone{
+    display: flex;
+    padding-top: 5px;
+    height: 30px;
+    transition: transform 0.5s ease;
+}
+
+.phone__number{
+    color: #FFDAB9;
+    padding: 17px 0;
+}
+
 /* Модальне вікно */
 .modal {
     display: none;
@@ -250,79 +288,12 @@ body.fade-out {
     text-align: center;
 }
 
-.header--content__btn{
-    padding-top: 50px; 
-}
-
-.header-content__btn{
-    color: #FFDAB9;
-    font-size: 24px;
-    background-color: #26323883;
-    padding: 18px 35px;
-    border-radius: 55px;
-    transition: all 0.3s ease-in-out;
-            
-}
-
-.header-content__btn:hover {
-    background-color: rgba(38, 50, 56, 0.8); /* Темніший зелений фон */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Додає тінь */
-}
-
-
-.logo{
-    display: flex;
-    align-items: center;
-    margin-left: 70px;
-    margin-right: 63px;   
-}
-
-.logo__img{
-    transition: transform 0.5s ease; /* Плавний ефект */
-    height: 40px;
-}
-
-.logo:hover .logo__img{
-    transform: scale(1.2); /* Збільшення */
-}
-.logo__footer:hover .logo__img{
-    transform: scale(1.2); /* Збільшення */
-}
-.phone:hover .imgPhone{
-    transform: scale(1.2);
-}
-.phone{
-    display: flex;
-    align-items: center;
-    gap: 0 10px;
-    margin-right: 50px;
-}
-.imgPhone{
-    display: flex;
-    padding-top: 5px;
-    height: 30px;
-    transition: transform 0.5s ease;
-}
-
-.phone__number{
-    color: #FFDAB9;
-    padding: 17px 0;
-}
-
 .header-content__text{
-    
     padding-top:  120px;
     font-size: 40px;
     color: #F5F5DC;
-    text-shadow: 
-    -1px -1px 0 black,
-    1px -1px 0 black,
-    -1px 1px 0 black,
-    1px 1px 0 black;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
 }
-
-  
-  
 
 .header-content__text1{
     padding-top: 25px;
@@ -330,16 +301,13 @@ body.fade-out {
     max-width: 750px;
     margin: 0 auto;
     color: #F5F5DC;
-    text-shadow: 
-    -1px -1px 0 black,
-    1px -1px 0 black,
-    -1px 1px 0 black,
-    1px 1px 0 black;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1); 
 }
+
 
 .header__titel{
     padding-top: 35px;
-    font-size: 96px;
+    font-size: 80px;
     color: hsl(0, 0%, 90%);
     font-family: "Aclonica", serif;
     text-shadow: 
@@ -349,7 +317,52 @@ body.fade-out {
     3px 3px 0 black;  
 }
 
+.header--content__btn{
+    padding-top: 50px; 
+    margin-bottom: 70px;  
+}
 
+.header-content__btn{
+    color: #FFDAB9;
+    font-size: 24px;
+    background-color: #26323883;
+    padding: 18px 35px;
+    border-radius: 55px;
+    transition: all 0.3s ease-in-out;      
+}
+
+.header-content__btn:hover {
+    background-color: rgba(38, 50, 56, 0.8); /* Темніший зелений фон */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Додає тінь */
+}
+
+.last__works{
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 20px; 
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1); 
+}
+
+.slider {
+    overflow: hidden;
+    position: relative;
+    width: 700px;
+  }
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .slide {
+    min-width: 33.33%; /* Для ПК */
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  .slide img {
+    width: 200px;
+    border-radius: 10%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 1), 
+    -5px 0px 10px rgb(0, 0, 0, 1);
+  }
 
 
 
@@ -493,7 +506,7 @@ body.fade-out {
     background-color: #263238;
     background-repeat: no-repeat;
     background-position: top center;
-    height: 325px;
+    height: 317px;
 }
 
 .footer__box{
@@ -504,7 +517,7 @@ body.fade-out {
 
 .logo__footer{
     padding-top: 25px;
-    font-size: 72px;
+    font-size: 64px;
     color: hsl(0, 0%, 90%);
     font-family: "Aclonica", serif;
     text-shadow: 
@@ -534,7 +547,7 @@ body.fade-out {
     gap: 7px 0px;
     font-size: 20px;
     color: #FFDAB9;
-    width: 144px;
+    width: 146px;
     text-align: center;
 }
 
@@ -694,7 +707,7 @@ body.fade-out {
         font-size: 36px;
     }
     .header__titel{
-        font-size: 84px;
+        font-size: 70px;
     }
     .header-content__text1{
         font-size: 32px;
@@ -758,7 +771,7 @@ body.fade-out {
         font-size: 30px;
     }
     .header__titel{
-        font-size: 72px;
+        font-size: 60px;
     }
     .header-content__text1{
         font-size: 26px;
@@ -783,10 +796,9 @@ body.fade-out {
         right: 0;
         width: 100%;
         top: 20px;
-    
         padding: 80px 0px;
         z-index: 1;
-        background-color: #263238e3;
+        background-color: rgba(38, 50, 56, 0.95);
         transform: translateY(-120%);
         transition: transform 0.5s ease;
     }
@@ -839,6 +851,14 @@ body.fade-out {
         margin-bottom: 10px;
     }
 
+    .footer{
+        height: 307px;
+    }
+
+    .logo__footer{
+        font-size: 54px;
+    }
+
     .footer-box{
         margin: 25px 15px;
     }
@@ -847,8 +867,26 @@ body.fade-out {
     }
 }
 
+@media (max-width: 768px){
+    .slide {
+        min-width: 100%; /* Для мобільних пристроїв */
+    }
+
+    .slider {
+        overflow: hidden;
+        position: relative;
+        max-width: 300px;
+      }
+      
+}
+
+
 
 @media (max-width: 560px){
+
+    .last__works{
+        font-size: 28px;
+    }
 
     .container{
         padding: 0 10px;
@@ -866,7 +904,7 @@ body.fade-out {
         font-size: 22px;
     }
     .header__titel{
-        font-size: 64px;
+        font-size: 48px;
     }
     .header-content__text1{
         font-size: 20px;
@@ -888,17 +926,17 @@ body.fade-out {
     }
 
     .logo__footer{
-        font-size: 48px;
+        font-size: 42px;
         margin-bottom: 10px;
     }
 
     .footer__menu{
         text-align: left;
-        width: 100px;
+        width: 120px;
     }
 
     .footer{
-        height: 383.48px;
+        height: 377.48px;
     }
 
 }

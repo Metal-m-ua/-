@@ -89,17 +89,28 @@ body.fade-out {
 }
 .header__inner{
     min-height: 100vh;
-    padding-bottom: 20px;
+    padding-bottom: 50.52px;
 }
 
-.header{
+.header {
+    position: relative;
+    z-index: 1;
+}
+
+.header::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background-image: url(../images/gallery/fone.png);
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: center;
     background-size: cover;
-    background-attachment: fixed;
-    
-}    
+    z-index: -1;
+    pointer-events: none;
+}   
 .headertop{
     background-color: #263238;
     margin-top: 20px;
@@ -503,6 +514,8 @@ video {
     background-repeat: no-repeat;
     background-position: top center;
     height: 317px;
+    position: relative;
+    z-index: 1;
 }
 
 .footer__box{
@@ -874,10 +887,6 @@ video {
     
     .text__contacts{
         font-size: 20px;
-    }
-
-    .header{
-        background-attachment: scroll;
     }
     
     .header__titel{

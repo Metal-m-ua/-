@@ -326,7 +326,7 @@ body.fade-out {
     color: #FFDAB9;
     font-size: 24px;
     background-color: #26323883;
-    padding: 18px 35px;
+    padding: 16px 34px;
     border-radius: 55px;
     transition: all 0.3s ease-in-out;      
 }
@@ -912,6 +912,7 @@ body.fade-out {
 
     .header-content__btn{
         font-size: 18px;
+        white-space: nowrap;
     }
 
     .adreas__box{
